@@ -5,6 +5,7 @@ keys = pyglet.window.key
 FRAME_TIME = 1/30.0
 
 def _keyaxis(game,neg,pos):
+	# nice handling for opposing key pairs
 	val = 0
 	if game.keys[neg]: val -= 1
 	if game.keys[pos]: val += 1
