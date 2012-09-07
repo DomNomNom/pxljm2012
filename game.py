@@ -30,6 +30,7 @@ class Game(object):
 
 		self.actions = []
 		self.actors = []
+		self.level = tmx.TileMap('art/map.tmx')
 	
 	def update(self, dt):
 		# utterly standard time accumulator
@@ -43,8 +44,8 @@ class Game(object):
 		actions = self.actions
 		self.actions = []
 		for a in actions: a()
-		if self.keys[keys.ESCAPE]:
-			pyglet.app.exit()
+		if self.keys[keys.ESCAPE]: pyglet.app.exit()
+		self.level.draw()
 
 	def add_actor(self, a):
 		self.actions.append(lambda:self.actors.append(a))
@@ -54,6 +55,5 @@ class Game(object):
 
 pyglet.resource.path = ['art']
 game = Game()
-_map = tmx.TileMap('art/map.tmx')
 game.add_actor(Player())
 pyglet.app.run()

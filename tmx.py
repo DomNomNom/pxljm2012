@@ -11,9 +11,11 @@ class TileMap:
         ss = None
         last = -1
         for s in self.sheets.values():
-            if s['firstgid'] < image_id and s['firstgid'] > last:
+            if s['firstgid'] <= image_id and s['firstgid'] > last:
                 ss = s
                 last = s['firstgid']
+        if ss is None:
+            raise Exception('bogus image id: %d' % image_id)
         return ss['image'][image_id - last]
 
 
@@ -74,3 +76,6 @@ class TileMap:
                 self.layers[name] = l
                 self.layers_ordered.append(l)
 
+    def draw(self):
+        for layer in self.layers_ordered:
+            layer['batch'].draw()
