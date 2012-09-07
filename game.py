@@ -41,6 +41,8 @@ class Game(object):
 		actions = self.actions
 		self.actions = []
 		for a in actions: a()
+		if self.keys[keys.ESCAPE]:
+			pyglet.app.exit()
 
 	def add_actor(self, a):
 		self.actions.append(lambda:self.actors.append(a))
