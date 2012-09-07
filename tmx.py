@@ -1,6 +1,8 @@
 import base64
 from lxml import etree
 import zlib
+import struct
+import StringIO
 
 class TileMap:
     def __init__(self, filename):
@@ -22,5 +24,11 @@ class TileMap:
                     raise Exception('Unsupported encoding')
                 if dataNode.attrib.get('compression') != 'zlib':
                     raise Exception('Unsupported compression')
+                width = int(layerNode.attrib.get('width'))
+                height = int(layerNode.attrib.get('height'))
+                name = layerNode.attrib.get('name')
 
                 unpacked = zlib.decompress(base64.decodestring(data))
+                print 'layer %s %dx%d %d bytes' % (name, width, height, len(unpacked))
+                s = struct.Struct('<' + 'I'*width*height)
+                s.unpack_from(unpacked)
