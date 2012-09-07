@@ -54,6 +54,7 @@ class Game(object):
 		self.actions.append(lambda:self.actors.remove(a))
 
 pyglet.resource.path = ['art']
+pyglet.resource.reindex()
 game = Game()
 game.add_actor(Player())
 pyglet.app.run()
