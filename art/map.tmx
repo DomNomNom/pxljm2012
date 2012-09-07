@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="objects" tilewidth="32" tileheight="32">
-  <image source="objects.png" width="32" height="32"/>
+ <tileset firstgid="1" name="floors" tilewidth="32" tileheight="32">
+  <image source="tileSets/floors.png" width="864" height="832"/>
  </tileset>
- <tileset firstgid="2" name="tiles" tilewidth="32" tileheight="32">
-  <image source="tiles.png" width="352" height="32"/>
+ <tileset firstgid="703" name="walls" tilewidth="32" tileheight="32">
+  <image source="tileSets/walls.png" width="640" height="608"/>
  </tileset>
- <layer name="ground" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJzt0SEKAAAIBEGT/3+y1WQUwRnYcvUiAAAAAAAAAAAAAG7J1rSxwx8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADANwXU8ABJ
-  </data>
- </layer>
- <layer name="Tile Layer 2" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
-  </data>
- </layer>
- <objectgroup name="objects" width="100" height="100"/>
- <layer name="collision" width="100" height="100" opacity="0.25">
+ <layer name="Tile Layer 1" width="100" height="100">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
