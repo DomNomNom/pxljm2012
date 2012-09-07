@@ -7,10 +7,21 @@ import array
 import pyglet
 
 class TileMap:
+    def image_by_id(self, image_id):
+        ss = None
+        last = -1
+        for s in self.sheets.values():
+            if s['firstgid'] < image_id and s['firstgid'] > last:
+                ss = s
+                last = s['firstgid']
+        return ss['image'][image_id - last]
+
+
     def __init__(self, filename):
         self.sheets = {}
         self.tiles = {}
         self.layers = {}
+        self.layers_ordered = []
 
         with open(filename,'r') as f:
             doc = etree.parse(f)
@@ -20,10 +31,12 @@ class TileMap:
                 imageNode = tsNode.xpath('./image')[0]
                 source = imageNode.attrib.get('source')
                 print 'load tileset %s' % (source,)
+                raw_image = pyglet.resource.image(source)
                 self.sheets[tsNode.attrib.get('name')] = {
                         'firstgid': int(tsNode.attrib.get('firstgid')),
-                        'rowlen': int(imageNode.attrib.get('width'))/32,
-                        'image': pyglet.resource.image(source)
+                        'image': pyglet.image.ImageGrid(raw_image,
+                            int(imageNode.attrib.get('height'))/32,
+                            int(imageNode.attrib.get('width'))/32)
                         }
 
             for layerNode in doc.xpath('//layer'):
@@ -41,9 +54,23 @@ class TileMap:
                 print 'layer %s %dx%d %d bytes' % (name, width, height, len(unpacked))
                 arr = array.array('I')
                 arr.fromstring(unpacked)
-                self.layers[name] = {
+
+                batch = pyglet.graphics.Batch()
+                for y in xrange(0,height):
+                    for x in xrange(0,width):
+                        if arr[y * width + x]:
+                            pyglet.sprite.Sprite(
+                                self.image_by_id(arr[y * width + x]),
+                                x * 32,
+                                y * 32,
+                                batch=batch)
+
+                l = {
                         'width': width,
                         'height': height,
                         'data': arr,
+                        'batch': batch
                         }
+                self.layers[name] = l
+                self.layers_ordered.append(l)
 
