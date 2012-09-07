@@ -4,6 +4,8 @@ import pyglet
 keys = pyglet.window.key
 FRAME_TIME = 1/30.0
 
+import tmx
+
 def _keyaxis(game,neg,pos):
 	# nice handling for opposing key pairs
 	val = 0
@@ -51,5 +53,6 @@ class Game(object):
 		self.actions.append(lambda:self.actors.remove(a))
 
 game = Game()
+_map = tmx.TileMap('art/map.tmx')
 game.add_actor(Player())
 pyglet.app.run()
