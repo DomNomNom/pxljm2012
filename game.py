@@ -52,6 +52,7 @@ class Game(object):
 	def remove_actor(self, a):
 		self.actions.append(lambda:self.actors.remove(a))
 
+pyglet.resource.path = ['art']
 game = Game()
 _map = tmx.TileMap('art/map.tmx')
 game.add_actor(Player())
