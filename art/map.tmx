@@ -6,9 +6,22 @@
  <tileset firstgid="703" name="walls" tilewidth="32" tileheight="32">
   <image source="tileSets/walls.png" width="640" height="608"/>
  </tileset>
- <layer name="Tile Layer 1" width="100" height="100">
+ <tileset firstgid="1083" name="collisions" tilewidth="32" tileheight="32">
+  <image source="tileSets/collisions.png" width="32" height="32"/>
+ </tileset>
+ <layer name="background" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1DsKgDAURcFngq7U/W9A8YcICQS0UKsZOJWkySVGAAAAlzVF9Lku5+ffedd83HfULcUGaa+LuuMM32jtMRSN3bnBlOzxh6XxP2o15PrNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3NnYWCmU=
+  </data>
+ </layer>
+ <layer name="objects" width="100" height="100">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <layer name="collision" width="100" height="100" opacity="0.31">
+  <data encoding="base64" compression="zlib">
+   eJzt1LENACAIBEAKt3L/vaxsjAYK6e6Sr+ieQAQAALDNcU91zl+3brPu7aNPtdvzZujx+kdZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDcAj1TCJ4=
   </data>
  </layer>
 </map>
