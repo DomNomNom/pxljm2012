@@ -7,6 +7,8 @@ import array
 import pyglet
 
 class SaneImageGrid(object):
+    # row 0 is the top one.
+    # what pyglet tries to do is not sane, so transform the index
     def __init__(self, img, w, h):
         self.ig = pyglet.image.ImageGrid(img,h,w)
         self.w = w
