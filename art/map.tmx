@@ -39,15 +39,24 @@
  <tileset firstgid="2257" name="structures" tilewidth="32" tileheight="32">
   <image source="tileSets/structures.png" width="512" height="512"/>
  </tileset>
+ <tileset firstgid="2513" name="objects" tilewidth="32" tileheight="32">
+  <image source="tileSets/objects.png" width="512" height="480"/>
+ </tileset>
+ <tileset firstgid="2753" name="janitor" tilewidth="32" tileheight="32">
+  <image source="tileSets/janitor.png" width="96" height="96"/>
+ </tileset>
  <layer name="background" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2ttu0zAcx/E4pX0E9lJMICEmuOMgDi/CGSS4GBsUNBAS4nDBI3QPAtIYV8AYXE9TwVZq4qa246RJE5LvxadKs7TL/r/+bSfdZhxFmwAAAAAAAAAAoLX+SMOB32DQ/Hn2xbH0QETRLYf7Ijmm6fPsC1XrO7Lmjx1uW/LYbsF5d1WZPFB/Hg+lmxZ3c/LYdWDOSRUZT3Qeqg/OyBpuWJzz1FbV/rd87XfDL5HsD82w6Xq1iZnHuqz782jRupGHrRcO5GuHUeqHSI+Xm//ofV/lk88z+2J1f+v/wMzj44mwPLI1LprHF/nk08xeD/KwXVO4xnMzj1OB/aFqm9cfeg4x89g13qPL41V2vlA1NuujuObkMuNVaB7ZXupi7UOoGo+jZJ5Vc6vansb2a+9YujdbR5XN41Du+Gb4SR7WPA5ntVHbqk6qJpfEfI1Mpx3rq7M5efiQR5pHlisHbeRhyyPvPMgjEXnuC+raTOKEuU/VizyqdxzbP/9q/xUxn8ckDstjq6I8QjM5OUg0XcuibNfivjz09tSSxzReHP9HlrnCdWzI/BFyf0VnYWq6znX0x4VR/hxSxg35cN2zTng0dP9MXavvi7RvzAzWOpJJyHhVpWvy4WrJ91XX6nsiqf2aJYOu56G3Lxv1C80odI1bltkfXekNxXXtN/KstzR1r2WSYatbnd9JdaUvirL1Ed89rcaWZZ/OQ41XF8V8HrbjUZ/tOLw/yKa8cYFjj6TXGUct+Bv6TGXwxshjXDDTLP73ZPk8TNR3tcz6jgPyQD21d8mOV02fc9/5+oN1VbvyQDN5MF5Vr8w6KNsbIXmw3qqGORfYcqA/mpPNgPGq+Tw+SO8t2ehjlrlGx6KnOXm8k9568sDqMH+s3ivpmbRT8+9hXMuncngpnRdJLnr/i5zXsZZdnu3zqeeOndg/j6AZT1pwDn2XNzaZuG8IzAvpCeZ3dBmfbwAAAAAAAAAAAAAAAAAAAAAAAAAAAADolr8IvJF0
+   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
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
+  <properties>
+   <property name="visible" value="1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1LEKgCAUhlGX3n/ohRtCEGnIQPujc8BZuJ/XUgAAAAAAAAAA4D37dh4y6JFFj//RO4f9y1Fb6DFm5rz0GLNiXnrc5/3m6Zus+L/qHd7CtXY+s3dm5V1f1s7HnMAeJPE3ZdEjix55tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4IkDVZshQQ==
   </data>
@@ -125,14 +134,24 @@
   <object gid="2032" x="1792" y="1024"/>
   <object gid="2033" x="1696" y="1056"/>
   <object gid="2034" x="1504" y="896"/>
+  <object gid="2426" x="928" y="640"/>
+  <object gid="2424" x="928" y="608"/>
+  <object gid="2425" x="928" y="576"/>
+  <object gid="2501" x="992" y="640"/>
+  <object gid="2706" x="960" y="608"/>
+  <object gid="2585" x="864" y="960"/>
+  <object gid="2756" x="896" y="960"/>
+  <object gid="2757" x="903" y="962"/>
+  <object gid="2755" x="939" y="957"/>
+  <object gid="2753" x="936" y="964"/>
  </objectgroup>
  <objectgroup name="buttons" width="100" height="100">
-  <object gid="1423" x="1248" y="736">
+  <object type="button" gid="1423" x="1248" y="736">
    <properties>
     <property name="id" value="10"/>
    </properties>
   </object>
-  <object gid="1423" x="1280" y="736">
+  <object type="button" gid="1423" x="1280" y="736">
    <properties>
     <property name="id" value="11"/>
    </properties>
@@ -149,7 +168,7 @@
   </object>
  </objectgroup>
  <objectgroup name="doors" width="100" height="100">
-  <object gid="1624" x="1152" y="992">
+  <object type="door" gid="1624" x="1152" y="992">
    <properties>
     <property name="buttons" value="00,01"/>
    </properties>
