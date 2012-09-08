@@ -15,12 +15,24 @@
  <tileset firstgid="1165" name="door_highSecurity" tilewidth="32" tileheight="32">
   <image source="tileSets/hightechsecurity.png" width="256" height="224"/>
  </tileset>
+ <tileset firstgid="1221" name="boxes" tilewidth="32" tileheight="32">
+  <image source="tileSets/boxes.png" width="448" height="448"/>
+ </tileset>
+ <tileset firstgid="1417" name="AI" tilewidth="32" tileheight="32">
+  <image source="tileSets/AI.png" width="32" height="128"/>
+ </tileset>
  <layer name="background" width="100" height="100">
+  <properties>
+   <property name="visible" value="1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt11tOg0AUgOEBdHc2Ppi4Aa878fJei1ZTjYnXB5fQjWjiZRdNox5isWUg0FZhTpjf5CPEUnvKXxjbDY3pAgAAAAAAAAAAAAAAeOQwMOYg+Nk/N3lVz5/9mef1PuS1XsR74P69a5T2eFop7tGJssfLob+W6fEmT3wWr/Qo7bEWzd/D9cxtlvbo0KM2fZNVduyxnOCjGnrM3td8b7hIj/R8rct537Qkj2/8oce+bPYCetg9+ib/eV3287tIj13Z7NCj9BwlhuFUnT24X9XTo7dED9TXw/4brt9HW1StIf+xvpThu7muHnw319UDU59iNZqKovw5/wqza8tQwdy+GIf5HmMFc/mgV/C7tMeWbLaDbI+i41GfOJz/+qBNM0bi2jJSMJfPkgY34nay359wPZev7OvDfjxWMGObxdZ+VQ80y75fuZ7Hd2XXB/9X6eoBNz24X+lgXxv00NOBHnp6cL9y3+NRPBS0cT1bW51W9LgXd/RQgfWjeVfiTAwUzOK7pMPlTBfX8/guXTsGYfk6AjdOFMzguwsFMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw7xtApNLt
+   eJzt10tOwlAUgOHbVnYncWDiBnzuxMccQdGgMfE5cAlsRBMfYx9jQtTTAEJvm7ai5R65v8nXNFrK4f5pK43QmAYAAAAAAAAAAAAAAIBHdgJjtoPB/pFJK3r95E+Z93uW97oXT4H7z67RqMftQnaPepQ8Xg79Nk2PR3nhnXigR26Pxah8D9cz/zc1k1SmR50elWnLmr3Lwr0Fg/28Y/fkmN0Kekze13xvGDd4lUV4GfaomfT62JZk3Vcs8bmWf9FjSzabAT3iBraiHmXP/ZMeG7JZp0fuGsW64ViVPbhfVdOjOUUPVNfDPofrzzEvip4hf/F8ycN3c109+G6uqwfGPkQtGoui9Jp/hslnS1fB3L7oh+kefQVz+aCZ8btRj1XZrAXJHlnHozqtsPz1QZvZ6IkzS0/BXD6LG5yLi+F+e8j1XL6yrw/77y0FM86zlrVf1AOzZd+vXM/ju7zrg/+rdPWAmx7cr3Swrw166OlADz09uF+573EjrjPauJ5tXh0U9LgSl/RQgefH7J2KQ9FRMIvv4g4nE11cz+O70bOjE+Y/R+DGvoIZfHesYAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7n0B+7PN4Q==
   </data>
  </layer>
  <layer name="objects" width="100" height="100" visible="0">
+  <properties>
+   <property name="visible" value="1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
@@ -30,11 +42,46 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1CEKADAMA8CK/Wr//9dsYWaUxd1BXVQCrQIAAAAAAAAAAAAAAMjY675Jhj8m3doj57XbnrNHjn8FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQHcAE3UGKA==
+   eJztyqENAAAIwDAEX/H/XxyAQ0KbzC0CAAAAAAAAAAAAAAAA4LfK2eYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4IYGgn8Cdw==
   </data>
  </layer>
- <objectgroup name="objects" width="100" height="100">
+ <objectgroup name="objects" width="100" height="100" visible="0">
+  <properties>
+   <property name="visible" value="1"/>
+  </properties>
   <object x="1069" y="1110" height="1"/>
   <object gid="1160" x="448" y="1728"/>
+  <object x="768" y="1504" width="64" height="32"/>
+  <object gid="1222" x="684" y="1624"/>
+  <object gid="1222" x="692" y="1615"/>
+  <object gid="1222" x="423" y="807"/>
+  <object gid="1222" x="450" y="804"/>
+  <object gid="1222" x="478" y="805"/>
+  <object gid="1222" x="514" y="800"/>
+  <object gid="1222" x="419" y="835"/>
+  <object gid="1222" x="450" y="837"/>
  </objectgroup>
+ <layer name="ai_paths" width="100" height="100">
+  <properties>
+   <property name="visible" value="0"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2TEKwCAQBMBr8vhEHx0sAmIEu0NkprzytlnYCAAAAAAAAAAAAIB9lOt/uyc3ctTh948sAOAIOtc+xr7V6FwAAAAAAMApvl1qtomQr8/BJgUAAAAAAAAAAAAAAAAAAAAAAACw9gJj7ga+
+  </data>
+ </layer>
+ <layer name="ai_actions" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 6" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
 </map>
