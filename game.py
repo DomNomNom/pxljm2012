@@ -187,6 +187,7 @@ objtypes = {
 		'playerSpawn': Player,
 		'aiSpawn': PathFollower,
 		'button': FloorButton,
+		'door': Door,
 		}
 
 pyglet.resource.path = ['art']
