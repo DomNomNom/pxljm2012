@@ -50,7 +50,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2stu00AUxvGxQyL1BehLgUBCIJBYcBGXF4A34A4SLEoLARWEhLgseIT0QUAqZcWtsK6qwBw5QybujD124tjY/8Uvclw7dc+XMzNOuhYrtQYAAAAAAAAAABrrj9bvZev16r/OrtjX7kdK3fS4FyXH1H2dXSG1vq1r/sjjliOPjQZcd1uVyQPV5/FAu+FwJyePLQ/mnKki44nJQ/rguK7hKYeTGbWV2v/W536z/IqS/aEZ1l2vJrHzOKrr/kwpdX1FqbMT11aS/b5aih/63L6a+h5Nj9eb/5h9X/STTxM70fL+1v+BnceHQ0keaek8BmpW0Tw+6ycfJ7Y7kIfrnsI3ntt5HAnsD8kgrz/MHGLnsWW9RpvHq/R8ITW26yN8c7JrvArpj5A8hCuPrpEaD1Uyz8rcKtvj2H3vHWt3J+soqbvdG6H9savP/Wr5SR7OPHYntZFtqZPU5Hw0WyPbMc/66kROHlnIY5pHmi8HIz1P21x55F0HeSRUxueCpjajOGHvc62dyGN++7H7/S/7L0azeYzisDzWF5RHaCaHe4m6a1mU6148Kw+zPXbkMY4Pjv+uuWLgOTZk/gj5fMVkYau7zlX0x5lB/hxSxlX9cCVjnfCw7/+Z3KvvRNO+sTNYbUkmIePVIl3WD5dKvq7cq29HSe1XHRm0PQ+zfcGqX2hGoWvcsuz+aEtvCN+93yBjvWXIZy2jFFfdqvxOqi19UZSrj/juaTnWHftMHjJenYtm83Adj+psxOH9QTblDQscu6e9StlrwN/QZZLBayuPYcFM0/jfk/nzsFHf5bLrOwzIA9XU3ic9XtV9zV2X1R+sq5qVB+rJg/Fq8cqsg9K9EZIH663FsOcCVw70R33SGTBe1Z/He+2dIxtzzDz36DjoSU4eb7U3GXlgeZg/lu+l9lTbrPj3MK7lkxxeaKejJBez/3nOeaxl5+d6f5q5YzPOnkdQj8cNuIauyxubbHxuCMwK6Qnmd7QZ728AAAAAAAAAAAAAAAAAAAAAAAAAAAAAaJe/yxyO6A==
+   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
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
@@ -58,9 +58,86 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1LEKgCAUhlGX3n/ohRtCEGnIQPujc8BZuJ/XUgAAAAAAAAAA4D37dh4y6JFFj//RO4f9y1Fb6DFm5rz0GLNiXnrc5/3m6Zus+L/qHd7CtXY+s3dm5V1f1s7HnMAeJPE3ZdEjix55tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4IkDVZshQQ==
+   eJzt1LEKgCAARVGX/n/ohxtCiNChQH3ROdAcvKuWAgAAAAAAAAAA6+zb+ZFBjyx6/I/eOdy/HLWFHs+M3EuPvtYuM/bSo621vfO7Tm/3e5MZ71f9h7PQdt1n9J2Z+a8vu+5jJ3APknibsuiRRY88WgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8MYBcdQjoQ==
   </data>
  </layer>
+ <objectgroup name="buttons" width="100" height="100">
+  <object type="button" gid="1423" x="1248" y="736">
+   <properties>
+    <property name="id" value="10"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="1280" y="736">
+   <properties>
+    <property name="id" value="11"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="1152" y="992">
+   <properties>
+    <property name="id" value="00"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="1152" y="960">
+   <properties>
+    <property name="id" value="01"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="832" y="896">
+   <properties>
+    <property name="id" value="21"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="800" y="896">
+   <properties>
+    <property name="id" value="20"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="864" y="896">
+   <properties>
+    <property name="id" value="22"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="992" y="960">
+   <properties>
+    <property name="id" value="30"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="992" y="992">
+   <properties>
+    <property name="id" value="31"/>
+   </properties>
+  </object>
+  <object type="button" gid="1423" x="992" y="1024">
+   <properties>
+    <property name="id" value="32"/>
+   </properties>
+  </object>
+  <object gid="1423" x="1536" y="1024"/>
+  <object gid="1423" x="1536" y="704"/>
+ </objectgroup>
+ <objectgroup name="doors" width="100" height="100">
+  <object type="door" gid="1624" x="1152" y="992">
+   <properties>
+    <property name="buttons" value="00,01"/>
+   </properties>
+  </object>
+  <object type="door" gid="1624" x="1248" y="736">
+   <properties>
+    <property name="buttons" value="10,11"/>
+   </properties>
+  </object>
+  <object type="door" gid="1624" x="832" y="896">
+   <properties>
+    <property name="buttons" value="20,21,22"/>
+   </properties>
+  </object>
+  <object gid="1624" x="1024" y="1024"/>
+  <object name="door3" type="door" gid="1624" x="1024" y="992">
+   <properties>
+    <property name="buttons" value="30,31,32"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="decoration" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
@@ -75,7 +152,11 @@
   <object gid="1222" x="514" y="800"/>
   <object gid="1222" x="419" y="835"/>
   <object gid="1222" x="450" y="837"/>
-  <object type="playerForm" gid="1222" x="448" y="1504"/>
+  <object type="playerForm" gid="1222" x="448" y="1504">
+   <properties>
+    <property name="formID" value="1"/>
+   </properties>
+  </object>
   <object type="aiSpawn" gid="1510" x="800" y="1056"/>
   <object type="aiSpawn" gid="1544" x="736" y="1152"/>
   <object type="aiSpawn" gid="1544" x="832" y="1152"/>
@@ -142,49 +223,18 @@
   <object gid="2585" x="864" y="960"/>
   <object gid="2756" x="896" y="960"/>
   <object gid="2757" x="903" y="962"/>
-  <object gid="2755" x="939" y="957"/>
-  <object gid="2753" x="936" y="964"/>
- </objectgroup>
- <objectgroup name="buttons" width="100" height="100">
-  <object type="button" gid="1423" x="1248" y="736">
-   <properties>
-    <property name="id" value="10"/>
-   </properties>
-  </object>
-  <object type="button" gid="1423" x="1280" y="736">
-   <properties>
-    <property name="id" value="11"/>
-   </properties>
-  </object>
-  <object type="button" gid="1423" x="1152" y="992">
-   <properties>
-    <property name="id" value="00"/>
-   </properties>
-  </object>
-  <object type="button" gid="1423" x="1152" y="960">
-   <properties>
-    <property name="id" value="01"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="doors" width="100" height="100">
-  <object type="door" gid="1624" x="1152" y="992">
-   <properties>
-    <property name="buttons" value="00,01"/>
-   </properties>
-  </object>
-  <object type="door" gid="1624" x="1248" y="736">
-   <properties>
-    <property name="buttons" value="10,11"/>
-   </properties>
-  </object>
+  <object gid="2755" x="937" y="956"/>
+  <object gid="2753" x="933" y="964"/>
+  <object gid="2035" x="640" y="992"/>
+  <object type="aiSpawn" gid="1510" x="1504" y="736"/>
+  <object type="aiSpawn" gid="1510" x="1312" y="1024"/>
  </objectgroup>
  <layer name="ai_paths" width="100" height="100" opacity="0.86">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2TEKwCAQBMBr8vhEHx0sAmIEu0NkprzytlnYCAAAAAAAAAAAAIB9lOt/uyc3ctTh948sAOAIOtc+xr7V6FwAAAAAAMApvl1qtomQr8/BJgUAAAAAAAAAAAAAAAAAAAAAAACw9gJj7ga+
+   eJzt2TsKgDAMANAuHt7PoSVDQWrAIlJF3htDp6QkgZQCAAAAAAAAAMBd83SOLUkse8fz1ibPNe9t/rMaAfAdbT8PZul7NnMUoEvMr+iZ+uRY2d7QQ53sXF/S7lvBHwUAAAAAAP6i3qWymwjjHevgJgUAAAAAAAAAAAAAAAAAAAAAAABwbQe0XA1z
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
@@ -192,16 +242,18 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2kENADAIADE+yGeaZ4IESFoFJ+AiAAAAAAAAAAAAAPZ4OV0AAAAAAAAAAAB0KC8QAAAAAAAAAAAAAAAAAAAAAAAAAId9JWIBJg==
+   eJzt2cENACAIBDA+jq8zu4OJELSdgNwl8CACAAAAAAAAAIDb1qie4A9yBniDfQ5AV9MNS3eaua4AAAAAAAAgh98cAAAAAAAAAAAAAAAAAAAAAAAAAJ1tSjUEAg==
   </data>
  </layer>
- <objectgroup name="ai_dynamicActions" width="100" height="100"/>
+ <objectgroup name="ai_dynamicActions" width="100" height="100">
+  <object gid="1419" x="1536" y="704"/>
+ </objectgroup>
  <layer name="collision" width="100" height="100" opacity="0.68">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1klug0AAAEEf8qv8/19RlEtkGXvYTIOrJS6YZZgyy+321/fXTaF4tOLRikcrHq14tOLRikcrHq14tOLRikcrHq14tOLRikcrHq14tOLRqujxO6ap5ertfY1L5nbqNx7rjzkyt594H0y1t8fINp88//eNzsWcZ86S++P+HM/GsHRcZ2iOx+i+7/a4Ums9Xv0/ecxrjcfofqNmz7adsuKx/Xn/e8wdx6vv5iXGR7b2fT713Tq17tHc7+kx0lk9Xq0feX/s4TEytjnHPLJ3eDy6n0bWjb4/1j6HrupRi8c5K13D0R5zvoGWLGuu7Yi2+L56NQdbzdvcruyx5nhHXS+PnseWz7V3dGWPM8ajlblqxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFo9ANRs1iZ
+   eJzt11FugzAQAFE+eqvc/15RVUWKKIb12uDBzEiRGkqI8SuGLstfr5/FQOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YHWGx+8xIy/731keI753hvRgpQcroseT7zlne2TmtvQ7PdqP+fl5z+OJ10Gpqzwy+zyx6FzUrDmZ62O9z94YsuO6QzUe0c9mr4+sx0y1ehz9fUb3We9bGoMedfttfS7jEX0u06P/93571I4j+38M9X7Tej8vrU2lbVtzf6ZHpLt6HG3fW4vW73t6RMZWc8yRXeGxdT1FtkXvH63r0KwetPS4Z6RzGO1R8wyUebWc24h6PF8dzUGveattZo+W4406Xz14Hj3XtSua2eOO6cHKuWKlBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPRm+DVWC4
   </data>
  </layer>
 </map>
