@@ -117,22 +117,23 @@ class FloorButton(Mover):
 class Door(Mover):
 	# a door which opens when triggered.
 	def __init__(self,game,props):
-		self.flags = props['ids'].split(',')
-		self.state = 0
+		self.flags = props['buttons'].split(',')
+		self.state = False
 		self.orig_gid = int(props['gid'])
 		self.open_gid = self.orig_gid + 7
 		super(Door,self).__init__(game,props)
 	
 	def tick(self, game):
-		new_state = any(game.flags[f] for f in self.flags)
-		self.state = new_state
-		if (self.state):
-			self.sprite.image = game.image_by_id(self.open_gid)
-			game.set_blocked(self.x, self.y, True)
-		else:
-			self.sprite.image = game.image_by_id(self.orig_gid)
-			game.set_blocked(self.x, self.y, False)
-		super(Door,self).tick()
+		new_state = any(game.flags.get(f,False) for f in self.flags)
+		if new_state != self.state:
+			self.state = new_state
+			if (self.state):
+				self.sprite.image = game.level.image_by_id(self.open_gid)
+				game.level.set_blocked(self.x, self.y, True)
+			else:
+				self.sprite.image = game.level.image_by_id(self.orig_gid)
+				game.level.set_blocked(self.x, self.y, False)
+		super(Door,self).tick(game)
 
 
 class Game(object):
