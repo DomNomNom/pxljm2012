@@ -27,8 +27,10 @@ class Mover(object):
 		self.rx = 1; self.ry = 0
 		self.v = float(props.get('v','1.7'))
 
+		gid = int(props.get('gid','2'))
+
 		self.sprite = pyglet.sprite.Sprite(
-			game.level.image_by_id(2),
+			game.level.image_by_id(gid),
 			self.x * 32,
 			-self.y * 32,
 			batch=game.objbatch)
