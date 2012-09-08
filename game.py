@@ -212,11 +212,10 @@ class Game(object):
 
 		# UI
 		glLoadIdentity()
-		#glTranslatef(0, 100,0)
 		glScalef(2,2,1)
 		
-		self.ui.draw() # FIXME: why is it not drawing
-		self.uibatch.draw()
+		self.ui.draw()
+		self.uibatch.draw() # TODO: add to this when they get unlocked
 		
 
 	def tick(self):
