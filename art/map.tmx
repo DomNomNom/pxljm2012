@@ -41,7 +41,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2MlKw0Acx/FMom9n8SCIRxdc3sTlXrcqVQRxOfgIfREFl5MHl3Mp6j/U2CzTSZomndh8C59SwqSZ/n+ZmUybruM0AQAAAAAAAAAAgJo4rEAfAEwH5pP/bUc5zrbqfz5xktLOD7+yXO9FrvUgnpX9315FQR53M/o8Gl60vTT9kyePJznxXjyShzGPOS97Hrb7XGW69WLWicqSR4M8StOSmn1K4T5U/7Op7Z602S0gj/h9EZ7X6p6hn8G7FOHtN49X1a/JikrWKTAvdV+M8b9rIef48NttydumIg8/g7hhOYx6/46Sx4a8rZOHsUa+jjtQZh7MV2ZrKl8eBznyqCPTXrylOVbW+OA/gXzS1pAi1hcT9uZRwXxlKw/25lFBbVdDuWTNyHbfp82XmPUGPC9Z8283urZ0hnwX60Xxem4yj14F+lUHB5pjQR7+fLWsonno2qM8h2728UE2+en2HMN0xUVMtwK/oc78DC5DebRGzDSOdX78PMKo72SF69vKkAfKqf0w8fnKdp/rzjQ+eK6qVh6wkwfzVfHyPAfFx0aWPHjeKkZ4LdDlwPiwJ54B85X9PG7FjSaboM04e3QkHaXkcS2uDHlgclg/Ju9cHIt2yddhXkvn53AmllQ/l+D4acp5PMuOT3d/BmtH2zWvI7BjvwJ9qLu0uSmM/w2BqCxjgvUd04z7GwAAAAAAAAAAAAAAAAAAAAAAAAAAAACmyw9ZgNC5
+   eJzt2MtOg0AYhmEG7N1pXJgYl2rj4U48rNzUqtWoMTEeFl5Cb0QTtSsXHtbGqD9psRwGmFJaEN7F09Q6heH/mBmmLduyWgAAAAAAAAAAAEBNHJSgDwCqgfnkf9tWlrWl+u+Prai8z9eTcz0MPKvir79svDzuZvR5zDnB9tL0T9qxdW2f5I/7gUfyiM1j1jHPw/TYo2RXFbr1omEFmeQxRx4T05Hr/5AivKv++6S2u9JmJ4c8dPcFeQzzeJMivA7yeFH9mqyoYI385qXuiyHusRYYH7nkERaXw6j1Io/8eLXp2kPkUZymypZHmzyMJO3FOwn1yXt8xPWjbnmMKm0NyWJTXjYSnhP2GvH/69V8j95MqFtW6/KylvG47l69znt0rw6rvvqZZlR036vmWzScIceJ1vzHDq4t3Zhj8Rty/r7saB5fJehXHbQ1n3l5uPPVsgrmoWuPyTmwzccH2WSn23PE+RQXIZ8luIY6czO49OXRGTHTMNb58fPwo77T5a9vxyAPTKb2ccLzVdF9rruk8cFzVbnyQDF5MF/lL8tzUHhsmOTB81Y+/GuBLgfGR3HCGTBfFZ/HrbjRZOO1GWePjqjDlDyuxVVCHpge1o/pOxdH4nTC52FeS+fmcCaWVD8X7/OTlO/xLDs+3f3prR2ndvI6gmLsl6APdZc2N/nxuyEQZDImWN9RZdzfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAtv+Cttck=
   </data>
  </layer>
  <objectgroup name="decoration" width="100" height="100">
@@ -49,7 +49,7 @@
    <property name="visible" value="1"/>
   </properties>
   <object x="1069" y="1110" height="1"/>
-  <object name="playerSpawn" gid="1160" x="448" y="1728"/>
+  <object name="playerSpawn" type="playerSpawn" gid="1160" x="448" y="1728"/>
   <object gid="1222" x="684" y="1624"/>
   <object gid="1222" x="692" y="1615"/>
   <object gid="1222" x="423" y="807"/>
@@ -120,7 +120,7 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2kEKwCAMBEAvfXy1j+5BFClC6cVKmHmBREgWkpQAAAAAAAAAACCucvz9AgC+mvXuc3E/v8yP7lmLrDYAEMIOmYtqlj1lLgAAAAAAIIq2l3KPs4fxH+ykAAAAAAAAAAAAAAAAAAAAAAAAAN7dno8H3w==
+   eJzt2TEKwCAQBMBr8vhEHx0sAmIEu0NkprzytlnYCAAAAAAAAAAAAIB9lOt/uyc3ctTh948sAOAIOtc+xr7V6FwAAAAAAMApvl1qtomQr8/BJgUAAAAAAAAAAAAAAAAAAAAAAACw9gJj7ga+
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
