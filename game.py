@@ -96,8 +96,8 @@ class Player(Mover):
 class FloorButton(Mover):
 	# a 'button' on the floor that is triggered by stepping on it
 	def tick(self, game):
-		game.flags[self.flag] = any(a in self.actors \
-			if a != self and a.x == self.x and a.y == self.y)
+		game.flags[self.flag] = any(a for a in self.actors \
+			if (a != self and a.x == self.x and a.y == self.y))
 		super.tick(FloorButton, game)
 
 
