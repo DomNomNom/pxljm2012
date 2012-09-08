@@ -36,12 +36,20 @@
  <tileset firstgid="1968" name="monitors" tilewidth="32" tileheight="32">
   <image source="tileSets/monitors.png" width="544" height="544"/>
  </tileset>
+ <tileset firstgid="2257" name="structures" tilewidth="32" tileheight="32">
+  <image source="tileSets/structures.png" width="512" height="512"/>
+ </tileset>
  <layer name="background" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2MtOg0AYhmEG7N1pXJgYl2rj4U48rNzUqtWoMTEeFl5Cb0QTtSsXHtbGqD9psRwGmFJaEN7F09Q6heH/mBmmLduyWgAAAAAAAAAAAEBNHJSgDwCqgfnkf9tWlrWl+u+Prai8z9eTcz0MPKvir79svDzuZvR5zDnB9tL0T9qxdW2f5I/7gUfyiM1j1jHPw/TYo2RXFbr1omEFmeQxRx4T05Hr/5AivKv++6S2u9JmJ4c8dPcFeQzzeJMivA7yeFH9mqyoYI385qXuiyHusRYYH7nkERaXw6j1Io/8eLXp2kPkUZymypZHmzyMJO3FOwn1yXt8xPWjbnmMKm0NyWJTXjYSnhP2GvH/69V8j95MqFtW6/KylvG47l69znt0rw6rvvqZZlR036vmWzScIceJ1vzHDq4t3Zhj8Rty/r7saB5fJehXHbQ1n3l5uPPVsgrmoWuPyTmwzccH2WSn23PE+RQXIZ8luIY6czO49OXRGTHTMNb58fPwo77T5a9vxyAPTKb2ccLzVdF9rruk8cFzVbnyQDF5MF/lL8tzUHhsmOTB81Y+/GuBLgfGR3HCGTBfFZ/HrbjRZOO1GWePjqjDlDyuxVVCHpge1o/pOxdH4nTC52FeS+fmcCaWVD8X7/OTlO/xLDs+3f3prR2ndvI6gmLsl6APdZc2N/nxuyEQZDImWN9RZdzfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAtv+Cttck=
+   eJzt2ttu0zAcx/E4pX0E9lJMICEmuOMgDi/CGSS4GBsUNBAS4nDBI3QPAtIYV8AYXE9TwVZq4qa246RJE5LvxadKs7TL/r/+bSfdZhxFmwAAAAAAAAAAoLX+SMOB32DQ/Hn2xbH0QETRLYf7Ijmm6fPsC1XrO7Lmjx1uW/LYbsF5d1WZPFB/Hg+lmxZ3c/LYdWDOSRUZT3Qeqg/OyBpuWJzz1FbV/rd87XfDL5HsD82w6Xq1iZnHuqz782jRupGHrRcO5GuHUeqHSI+Xm//ofV/lk88z+2J1f+v/wMzj44mwPLI1LprHF/nk08xeD/KwXVO4xnMzj1OB/aFqm9cfeg4x89g13qPL41V2vlA1NuujuObkMuNVaB7ZXupi7UOoGo+jZJ5Vc6vansb2a+9YujdbR5XN41Du+Gb4SR7WPA5ntVHbqk6qJpfEfI1Mpx3rq7M5efiQR5pHlisHbeRhyyPvPMgjEXnuC+raTOKEuU/VizyqdxzbP/9q/xUxn8ckDstjq6I8QjM5OUg0XcuibNfivjz09tSSxzReHP9HlrnCdWzI/BFyf0VnYWq6znX0x4VR/hxSxg35cN2zTng0dP9MXavvi7RvzAzWOpJJyHhVpWvy4WrJ91XX6nsiqf2aJYOu56G3Lxv1C80odI1bltkfXekNxXXtN/KstzR1r2WSYatbnd9JdaUvirL1Ed89rcaWZZ/OQ41XF8V8HrbjUZ/tOLw/yKa8cYFjj6TXGUct+Bv6TGXwxshjXDDTLP73ZPk8TNR3tcz6jgPyQD21d8mOV02fc9/5+oN1VbvyQDN5MF5Vr8w6KNsbIXmw3qqGORfYcqA/mpPNgPGq+Tw+SO8t2ehjlrlGx6KnOXm8k9568sDqMH+s3ivpmbRT8+9hXMuncngpnRdJLnr/i5zXsZZdnu3zqeeOndg/j6AZT1pwDn2XNzaZuG8IzAvpCeZ3dBmfbwAAAAAAAAAAAAAAAAAAAAAAAAAAAADolr8IvJF0
+  </data>
+ </layer>
+ <layer name="observed" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1LEKgCAUhlGX3n/ohRtCEGnIQPujc8BZuJ/XUgAAAAAAAAAA4D37dh4y6JFFj//RO4f9y1Fb6DFm5rz0GLNiXnrc5/3m6Zus+L/qHd7CtXY+s3dm5V1f1s7HnMAeJPE3ZdEjix55tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4IkDVZshQQ==
   </data>
  </layer>
  <objectgroup name="decoration" width="100" height="100">
@@ -80,6 +88,43 @@
   <object gid="2035" x="832" y="1216"/>
   <object gid="2035" x="800" y="768"/>
   <object gid="2034" x="768" y="768"/>
+  <object gid="2261" x="1824" y="1120"/>
+  <object gid="2261" x="1824" y="1152"/>
+  <object gid="2261" x="1824" y="1184"/>
+  <object gid="2261" x="1856" y="1184"/>
+  <object gid="2261" x="1888" y="1184"/>
+  <object gid="2261" x="1920" y="1184"/>
+  <object gid="2261" x="2048" y="1184"/>
+  <object gid="2261" x="2016" y="1184"/>
+  <object gid="2261" x="1984" y="1184"/>
+  <object gid="2261" x="1952" y="1184"/>
+  <object gid="2261" x="2080" y="1184"/>
+  <object gid="2261" x="2112" y="1184"/>
+  <object gid="2261" x="2144" y="1184"/>
+  <object gid="2261" x="2144" y="1152"/>
+  <object gid="2261" x="2144" y="1120"/>
+  <object gid="2261" x="2144" y="1088"/>
+  <object gid="2261" x="2144" y="1056"/>
+  <object gid="2261" x="2144" y="1024"/>
+  <object gid="2261" x="2144" y="992"/>
+  <object gid="2261" x="2144" y="960"/>
+  <object gid="2261" x="2144" y="928"/>
+  <object gid="2261" x="2144" y="896"/>
+  <object gid="2261" x="2112" y="896"/>
+  <object gid="2261" x="2080" y="896"/>
+  <object gid="2261" x="2048" y="896"/>
+  <object gid="2261" x="2016" y="896"/>
+  <object gid="2261" x="1984" y="896"/>
+  <object gid="2261" x="1952" y="896"/>
+  <object gid="2261" x="1920" y="896"/>
+  <object gid="2261" x="1888" y="896"/>
+  <object gid="2261" x="1856" y="896"/>
+  <object gid="2261" x="1824" y="896"/>
+  <object gid="2261" x="1824" y="928"/>
+  <object gid="2261" x="1824" y="960"/>
+  <object gid="2032" x="1792" y="1024"/>
+  <object gid="2033" x="1696" y="1056"/>
+  <object gid="2034" x="1504" y="896"/>
  </objectgroup>
  <objectgroup name="buttons" width="100" height="100">
   <object gid="1423" x="1248" y="736">
@@ -132,17 +177,12 @@
   </data>
  </layer>
  <objectgroup name="ai_dynamicActions" width="100" height="100"/>
- <layer name="collision" width="100" height="100" opacity="0.69">
+ <layer name="collision" width="100" height="100" opacity="0.68">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt10EKwjAUQMEsvJX3v5cUN4KWFhLtE2Ygy7TwXwrNGE/32yBEjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo+XaP7fl7i3e/6HHFe//VVXPR4zPfR4seLXq0+L9qMZeW2R6v+539eXq06NGysgfz9GjRo2VFj6N7hbvHeatns9eDc/Ro0aNFjxazatGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aHgAykQmZQ==
-  </data>
- </layer>
- <layer name="observed" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJzt1rENwDAMBDE12b/Iwi6CLODGZ4AENMEVrxkAAAAAAAAAADjnfb6jQY8WPQDYZT867HmPHgBwN/9Vx99CkwY9WvTo0QIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgB0LTogPcQ==
+   eJzt1klug0AAAEEf8qv8/19RlEtkGXvYTIOrJS6YZZgyy+321/fXTaF4tOLRikcrHq14tOLRikcrHq14tOLRikcrHq14tOLRikcrHq14tOLRqujxO6ap5ertfY1L5nbqNx7rjzkyt594H0y1t8fINp88//eNzsWcZ86S++P+HM/GsHRcZ2iOx+i+7/a4Ums9Xv0/ecxrjcfofqNmz7adsuKx/Xn/e8wdx6vv5iXGR7b2fT713Tq17tHc7+kx0lk9Xq0feX/s4TEytjnHPLJ3eDy6n0bWjb4/1j6HrupRi8c5K13D0R5zvoGWLGuu7Yi2+L56NQdbzdvcruyx5nhHXS+PnseWz7V3dGWPM8ajlblqxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFoxaMVj1Y8WvFo9ANRs1iZ
   </data>
  </layer>
 </map>
