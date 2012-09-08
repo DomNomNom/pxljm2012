@@ -108,6 +108,10 @@ class Player(Mover):
     def __init__(self,game,props):
         super(Player,self).__init__(game,props)
         game.player = self
+        self.form_highlight_sprite = pyglet.sprite.Sprite(
+                game.ui.image_by_id(1),
+                0, 0,
+                batch = game.uibatch)
         self._take_form('1')
 
     def _take_form(self, n):
@@ -117,6 +121,7 @@ class Player(Mover):
         self.sprite.image = game.level.image_by_id(forms[n]['gid'])
         self.can_move = forms[n]['can_move']
         self.form = n
+        self.form_highlight_sprite.x = (int(n)-1) * 32
 
     # player plans move based on input
     def planmove(self, game):
