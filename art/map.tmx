@@ -12,26 +12,29 @@
  <tileset firstgid="1084" name="alien" tilewidth="32" tileheight="32">
   <image source="tileSets/alien.png" width="288" height="288"/>
  </tileset>
+ <tileset firstgid="1165" name="door_highSecurity" tilewidth="32" tileheight="32">
+  <image source="tileSets/hightechsecurity.png" width="256" height="224"/>
+ </tileset>
  <layer name="background" width="100" height="100">
   <data encoding="base64" compression="zlib">
-   eJzt1stqwzAQBVA/aL8zkL5+KMSQZaH9x7S0lagDiTCNN5UU+yyOMEiLQdczaNc1zY6bcGgula5n7eRRlzSPqL2idM1rNHX38ri9PPYV1L5E6d3vZ+bB/+Yxx13fNH1fvuYlm7r3l7A8t9N7nxXUvGRTd/4UlsdgM2by0ckjh6/udwadxFl0nkvM4zucuT8705lX2cR/f9Ne0g95TL1XT3lsg4ckD+/bvIZufn/IJo9j8Jo4VlDXmsUM3oL38fswKl3XWqX9ke4PFdS4ZEPyfS0P8krnVel61u6v/vCuqisPyuRhXtVDf9RFHnUxr+qiPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA6Ad8J+xL
+   eJzt11tOg0AUgOEBdHc2Ppi4Aa878fJei1ZTjYnXB5fQjWjiZRdNox5isWUg0FZhTpjf5CPEUnvKXxjbDY3pAgAAAAAAAAAAAAAAeOQwMOYg+Nk/N3lVz5/9mef1PuS1XsR74P69a5T2eFop7tGJssfLob+W6fEmT3wWr/Qo7bEWzd/D9cxtlvbo0KM2fZNVduyxnOCjGnrM3td8b7hIj/R8rct537Qkj2/8oce+bPYCetg9+ib/eV3287tIj13Z7NCj9BwlhuFUnT24X9XTo7dED9TXw/4brt9HW1StIf+xvpThu7muHnw319UDU59iNZqKovw5/wqza8tQwdy+GIf5HmMFc/mgV/C7tMeWbLaDbI+i41GfOJz/+qBNM0bi2jJSMJfPkgY34nay359wPZev7OvDfjxWMGObxdZ+VQ80y75fuZ7Hd2XXB/9X6eoBNz24X+lgXxv00NOBHnp6cL9y3+NRPBS0cT1bW51W9LgXd/RQgfWjeVfiTAwUzOK7pMPlTBfX8/guXTsGYfk6AjdOFMzguwsFMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw7xtApNLt
   </data>
  </layer>
- <layer name="objects" width="100" height="100">
+ <layer name="objects" width="100" height="100" visible="0">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
  </layer>
- <layer name="collision" width="100" height="100" opacity="0.31">
+ <layer name="collision" width="100" height="100" visible="0" opacity="0.31">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1DEKACAMA8AO/sr//8tJEFykmO0OumVKoFUAAMA2x32dDH90urVHzmu3Z84eOf4VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQsayYGKA==
+   eJzt1CEKADAMA8CK/Wr//9dsYWaUxd1BXVQCrQIAAAAAAAAAAAAAAMjY675Jhj8m3doj57XbnrNHjn8FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQHcAE3UGKA==
   </data>
  </layer>
  <objectgroup name="objects" width="100" height="100">
-  <object x="877" y="342" height="1"/>
-  <object gid="1160" x="416" y="288"/>
+  <object x="1069" y="1110" height="1"/>
+  <object gid="1160" x="448" y="1728"/>
  </objectgroup>
 </map>
