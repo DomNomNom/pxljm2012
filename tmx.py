@@ -135,3 +135,7 @@ class TileMap:
     def is_blocked(self, x, y):
         c = self.get('collision',x,y)
         return c != 0
+
+    def set_blocked(self, x, y, blocked):
+        ll = self.layers['collision']
+        ll['data'][y*ll['width']+x] = blocked and 1 or 0

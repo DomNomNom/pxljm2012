@@ -114,6 +114,26 @@ class FloorButton(Mover):
 			if (a != self and a.x == self.x and a.y == self.y))
 		super(FloorButton,self).tick(game)
 
+class Door(Mover):
+	# a door which opens when triggered.
+	def __init__(self,game,props):
+		self.flags = props['ids'].split(',')
+		self.state = 0
+		self.orig_gid = int(props['gid'])
+		self.open_gid = self.orig_gid + 7
+		super(Door,self).__init__(game,props)
+	
+	def tick(self, game):
+		new_state = any(game.flags[f] for f in self.flags)
+		self.state = new_state
+		if (self.state):
+			self.sprite.image = game.image_by_id(self.open_gid)
+			game.set_blocked(self.x, self.y, True)
+		else:
+			self.sprite.image = game.image_by_id(self.orig_gid)
+			game.set_blocked(self.x, self.y, False)
+		super(Door,self).tick()
+
 
 class Game(object):
 	def __init__(self):
