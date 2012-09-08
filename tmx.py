@@ -100,10 +100,12 @@ class TileMap:
             if layer['props'].get('visible','0') != '0':
                 layer['batch'].draw()
 
+    def get(self, layer, x, y):
+        ll = self.layers[layer]
+        if x < 0 or x >= ll['width'] or y < 0 or y >= ll['height']:
+            return None
+        return ll['data'][y*ll['width']+x]
+
     def is_blocked(self, x, y):
-        col = self.layers['collision']
-        if x < 0 or x >= col['width']:
-            return True
-        if y < 0 or y >= col['height']:
-            return True
-        return col['data'][y * col['width'] + x] != 0
+        c = self.get('collision',x,y)
+        return c != 0
