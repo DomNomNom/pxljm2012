@@ -75,6 +75,10 @@ follow_dirs = [
 		(0,-1)]
 
 class PathFollower(Mover):
+	def __init__(self,game,props):
+		super(PathFollower,self).__init__(game,props)
+		print 'PathFollower %s' % props
+
 	# ai that follows invisible arrows
 	def planmove(self, game):
 		movecmd = game.level.get('ai_paths',self.x,self.y)
@@ -156,7 +160,8 @@ class Game(object):
 		self.actions.append(lambda:self.actors.remove(a))
 
 objtypes = {
-		'playerSpawn': Player
+		'playerSpawn': Player,
+		'aiSpawn': PathFollower,
 		}
 
 pyglet.resource.path = ['art']
