@@ -91,13 +91,31 @@ class PathFollower(Mover):
 		basecmdid = game.level.sheets['AI']['firstgid']
 		self.dx, self.dy = follow_dirs[movecmd - basecmdid]
 
+forms = {
+		'1': {    # alien
+			'can_move': True,
+			'gid': 1160,
+			'can_use': True,
+			 },
+		'2': {    # box
+			'can_move': False,
+			'gid': 1222,
+			'can_use': False,
+			},
+		}
 
 class Player(Mover):
 	def __init__(self,game,props):
 		super(Player,self).__init__(game,props)
 		game.player = self
-		self.can_move = True
-		self.init_gid = int(props['gid'])
+		self._take_form('1')
+
+	def _take_form(self, n):
+		if not forms[n]['can_use']:
+			return
+		self.sprite.image = game.level.image_by_id(forms[n]['gid'])
+		self.can_move = forms[n]['can_move']
+		self.form = n
 
 	# player plans move based on input
 	def planmove(self, game):
@@ -106,12 +124,8 @@ class Player(Mover):
 			if self.dx == 0:
 				self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 		# shapeshifting
-		if game.keys[keys._1]:
-			self.sprite.image = game.level.image_by_id(self.init_gid)
-			self.can_move = True
-		if game.keys[keys._2]:
-			self.sprite.image = game.level.image_by_id(1222) # the box.
-			self.can_move = False
+		if game.keys[keys._1]: self._take_form('1')
+		if game.keys[keys._2]: self._take_form('2')
 
 class FloorButton(Mover):
 	# a 'button' on the floor that is triggered by stepping on it
