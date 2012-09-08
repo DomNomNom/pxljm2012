@@ -87,7 +87,7 @@ class Game(object):
 	def on_draw(self):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
-		glTranslatef(-player.sprite.x,-player.sprite.y,0)
+		glTranslatef(int(-player.sprite.x),int(-player.sprite.y),0)
 		glTranslatef(self.win.width/2, self.win.height/2,0)
 		self.win.clear()
 		self.level.draw()
