@@ -113,7 +113,7 @@ class TileMap:
                 obj['type'] = objNode.attrib.get('type',None)
                 obj['gid'] = objNode.attrib.get('gid',None)
                 obj['x'] = int(objNode.attrib.get('x'))/32;
-                obj['y'] = int(objNode.attrib.get('y'))/32;
+                obj['y'] = int(objNode.attrib.get('y'))/32 -1;
 
                 # load custom props
                 for propNode in objNode.xpath('.//property'):

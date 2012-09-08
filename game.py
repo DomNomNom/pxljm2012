@@ -24,7 +24,7 @@ class Mover(object):
 		self.x = props['x']; self.y = props['y']
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
-		self.rx = 1; self.ry = 0
+		self.rx = 0; self.ry = 0
 		self.v = float(props.get('v','1.7'))
 
 		gid = int(props.get('gid','2'))
