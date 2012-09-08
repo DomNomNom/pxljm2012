@@ -37,21 +37,20 @@
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
  </layer>
- <layer name="collision" width="100" height="100" visible="0" opacity="0.31">
+ <layer name="collision" width="100" height="100" opacity="0.56">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztyqENAAAIwDAEX/H/XxyAQ0KbzC0CAAAAAAAAAAAAAAAA4LfK2eYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4IYGgn8Cdw==
+   eJzt10EKwjAUQMEsvJX3v5cUN4KWFhLtE2Ygy7TwXwrNGE/32yBEjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo+XaP7fl7i3e/6HHFe//VVXPR4zPfR4seLXq0+L9qMZeW2R6v+539eXq06NGysgfz9GjRo2VFj6N7hbvHeatns9eDc/Ro0aNFjxazatGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aHgAykQmZQ==
   </data>
  </layer>
- <objectgroup name="objects" width="100" height="100" visible="0">
+ <objectgroup name="objects" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
   </properties>
   <object x="1069" y="1110" height="1"/>
-  <object gid="1160" x="448" y="1728"/>
-  <object x="768" y="1504" width="64" height="32"/>
+  <object name="playerSpawn" gid="1160" x="448" y="1728"/>
   <object gid="1222" x="684" y="1624"/>
   <object gid="1222" x="692" y="1615"/>
   <object gid="1222" x="423" y="807"/>
@@ -70,16 +69,19 @@
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
-  </data>
- </layer>
- <layer name="Tile Layer 5" width="100" height="100">
+  <properties>
+   <property name="visible" value="0"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
  </layer>
  <layer name="Tile Layer 6" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 7" width="100" height="100">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
