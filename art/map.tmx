@@ -19,22 +19,20 @@
   <image source="tileSets/boxes.png" width="448" height="448"/>
  </tileset>
  <tileset firstgid="1417" name="AI" tilewidth="32" tileheight="32">
-  <image source="tileSets/AI.png" width="32" height="128"/>
+  <image source="tileSets/AI.png" width="32" height="192"/>
+ </tileset>
+ <tileset firstgid="1423" name="myTiles" tilewidth="32" tileheight="32">
+  <image source="tileSets/myTiles.png" width="32" height="96"/>
+ </tileset>
+ <tileset firstgid="1426" name="aibots" tilewidth="32" tileheight="32">
+  <image source="tileSets/aibots.png" width="448" height="448"/>
  </tileset>
  <layer name="background" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt10tOwlAUgOHbVnYncWDiBnzuxMccQdGgMfE5cAlsRBMfYx9jQtTTAEJvm7ai5R65v8nXNFrK4f5pK43QmAYAAAAAAAAAAAAAAIBHdgJjtoPB/pFJK3r95E+Z93uW97oXT4H7z67RqMftQnaPepQ8Xg79Nk2PR3nhnXigR26Pxah8D9cz/zc1k1SmR50elWnLmr3Lwr0Fg/28Y/fkmN0Kekze13xvGDd4lUV4GfaomfT62JZk3Vcs8bmWf9FjSzabAT3iBraiHmXP/ZMeG7JZp0fuGsW64ViVPbhfVdOjOUUPVNfDPofrzzEvip4hf/F8ycN3c109+G6uqwfGPkQtGoui9Jp/hslnS1fB3L7oh+kefQVz+aCZ8btRj1XZrAXJHlnHozqtsPz1QZvZ6IkzS0/BXD6LG5yLi+F+e8j1XL6yrw/77y0FM86zlrVf1AOzZd+vXM/ju7zrg/+rdPWAmx7cr3Swrw166OlADz09uF+573EjrjPauJ5tXh0U9LgSl/RQgefH7J2KQ9FRMIvv4g4nE11cz+O70bOjE+Y/R+DGvoIZfHesYAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7n0B+7PN4Q==
-  </data>
- </layer>
- <layer name="objects" width="100" height="100" visible="0">
-  <properties>
-   <property name="visible" value="1"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+   eJzt2MlKw0Acx/FMom+neBDEowsub+Jyr1arVBHE5eAj9EUUXE4eXM5S1H+IsVkm0zQmndh8C59SyrSZ/n+Z+SdtuY7TAgAAAAAAAAAAABqiXYM5AJgM7Cf/27ZynC0VvD5y0oZ9PvrIc7wnOdadeFT2f3sdhXncTOnzmPXi42XoryJ5PMgHb8U9eRjzmPHy52F7znWm6xfTTlyePGbJozIdqdm7FO5NBa9NY3dlzE4JeSTPi+i+1vQM/QxepQgvP3k8q6Amyypdp9Cc1H0hwf+u+YLrwx+3KU8bijz8DJKychj1/B0lj3V5WiMPY418PXegyjzYr8xWVbE89gvk0USme/GO5r2q1gf/CRQzrIeU0V9MuDePC/crW3lwbx4X1nYlkkvejGzPfdJ8imlvwPPSNf9y472ll/Fd9Ivy9d10Hv0azKsJ9jXvhXn4+9WSiuehG4/qtN3864NsitPdc2T5EGcJHzX4DU3mZ3AeyaMzYqZJ9Pm/5xFFfccrWt9OjjxQTe2zJPcr23NuOtP64LqqXnnATh7sV+Urch2UXBt58uB6qxzRXqDLgfVhTzID9iv7eVyLK0024Zi/3KMj7WBIHpfiwpAHxof+MX6n4lB0Kz4O+9pwfg4nYlEFudieT5Pozs+wd3Rdcx+BHXs1mEPTHddgDsAk478qAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwX3wDbq3Qpw==
   </data>
  </layer>
  <layer name="collision" width="100" height="100" opacity="0.56">
@@ -59,8 +57,10 @@
   <object gid="1222" x="514" y="800"/>
   <object gid="1222" x="419" y="835"/>
   <object gid="1222" x="450" y="837"/>
+  <object type="playerForm" gid="1222" x="595" y="1244"/>
+  <object gid="1508" x="800" y="1056"/>
  </objectgroup>
- <layer name="ai_paths" width="100" height="100">
+ <layer name="ai_paths" width="100" height="100" opacity="0.31">
   <properties>
    <property name="visible" value="0"/>
   </properties>
@@ -73,17 +73,7 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
-  </data>
- </layer>
- <layer name="Tile Layer 6" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
-  </data>
- </layer>
- <layer name="Tile Layer 7" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+   eJzt2kENADAIADE+yGeaZ4IESFoFJ+AiAAAAAAAAAAAAAPZ4OV0AAAAAAAAAAAB0KC8QAAAAAAAAAAAAAAAAAAAAAAAAAId9JWIBJg==
   </data>
  </layer>
 </map>
