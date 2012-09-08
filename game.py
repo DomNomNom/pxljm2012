@@ -66,6 +66,26 @@ class Mover(object):
 		self.sprite.x = self.x * 32 + self.ux
 		self.sprite.y = -(self.y * 32 + self.uy)
 
+follow_dirs = [
+		(0,1),
+		(-1,0),
+		(1,0),
+		(0,-1)]
+
+class PathFollower(Mover):
+	# ai that follows invisible arrows
+	def planmove(self, game):
+		movecmd = game.level.get('ai_paths',self.x,self.y)
+		if movecmd is None or movecmd == 0:
+			# no move command in the map here.
+			# just continue the direction we were going
+			self.dx = self.rx
+			self.dy = self.ry
+			return
+		basecmdid = game.level.sheets['AI']['firstgid']
+		self.dx, self.dy = follow_dirs[movecmd - basecmdid]
+
+
 class Player(Mover):
 	# player plans move based on input
 	def planmove(self, game):
