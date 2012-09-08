@@ -9,9 +9,12 @@
  <tileset firstgid="1083" name="collisions" tilewidth="32" tileheight="32">
   <image source="tileSets/collisions.png" width="32" height="32"/>
  </tileset>
+ <tileset firstgid="1084" name="alien" tilewidth="32" tileheight="32">
+  <image source="tileSets/alien.png" width="288" height="288"/>
+ </tileset>
  <layer name="background" width="100" height="100">
   <data encoding="base64" compression="zlib">
-   eJzt1DsKgDAURcFngq7U/W9A8YcICQS0UKsZOJWkySVGAAAAlzVF9Lku5+ffedd83HfULcUGaa+LuuMM32jtMRSN3bnBlOzxh6XxP2o15PrNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3NnYWCmU=
+   eJzt1stqwzAQBVA/aL8zkL5+KMSQZaH9x7S0lagDiTCNN5UU+yyOMEiLQdczaNc1zY6bcGgula5n7eRRlzSPqL2idM1rNHX38ri9PPYV1L5E6d3vZ+bB/+Yxx13fNH1fvuYlm7r3l7A8t9N7nxXUvGRTd/4UlsdgM2by0ckjh6/udwadxFl0nkvM4zucuT8705lX2cR/f9Ne0g95TL1XT3lsg4ckD+/bvIZufn/IJo9j8Jo4VlDXmsUM3oL38fswKl3XWqX9ke4PFdS4ZEPyfS0P8krnVel61u6v/vCuqisPyuRhXtVDf9RFHnUxr+qiPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA6Ad8J+xL
   </data>
  </layer>
  <layer name="objects" width="100" height="100">
@@ -20,8 +23,15 @@
   </data>
  </layer>
  <layer name="collision" width="100" height="100" opacity="0.31">
+  <properties>
+   <property name="visible" value="0"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1LENACAIBEAKt3L/vaxsjAYK6e6Sr+ieQAQAALDNcU91zl+3brPu7aNPtdvzZujx+kdZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDcAj1TCJ4=
+   eJzt1DEKACAMA8AO/sr//8tJEFykmO0OumVKoFUAAMA2x32dDH90urVHzmu3Z84eOf4VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQsayYGKA==
   </data>
  </layer>
+ <objectgroup name="objects" width="100" height="100">
+  <object x="877" y="342" height="1"/>
+  <object gid="1160" x="416" y="288"/>
+ </objectgroup>
 </map>
