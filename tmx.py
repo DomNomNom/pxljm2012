@@ -8,7 +8,7 @@ import pyglet
 
 class SaneImageGrid(object):
     def __init__(self, img, w, h):
-        self.ig = pyglet.image.ImageGrid(img,w,h)
+        self.ig = pyglet.image.ImageGrid(img,h,w)
         self.w = w
         self.h = h
 
@@ -48,8 +48,8 @@ class TileMap:
                 self.sheets[tsNode.attrib.get('name')] = {
                         'firstgid': int(tsNode.attrib.get('firstgid')),
                         'image': SaneImageGrid(raw_image,
-                            int(imageNode.attrib.get('height'))/32,
-                            int(imageNode.attrib.get('width'))/32)
+                            int(imageNode.attrib.get('width'))/32,
+                            int(imageNode.attrib.get('height'))/32)
                         }
 
             for layerNode in doc.xpath('//layer'):
