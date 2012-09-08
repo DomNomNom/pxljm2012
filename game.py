@@ -172,6 +172,7 @@ class FormPickup(Mover):
         if game.player.x == self.x and game.player.y == self.y:
             game.remove_actor(self)
             forms[self.form]['can_use'] = True
+            forms[self.form]['sprite'].visible = True
             print 'obtained form %s' % self.form
             # todo: some silly effect
             # show this stuff in UI
@@ -201,6 +202,8 @@ class Game(object):
                 (int(formID)-1) * 32, # x
                 0, # y
                 batch=self.uibatch)
+            description['sprite'].visible = False
+            
     
     def update(self, dt):
         # utterly standard time accumulator
