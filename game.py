@@ -21,7 +21,7 @@ def _keyaxis(game,neg,pos):
 
 class Mover(object):
 	def __init__(self, game):
-		self.x = 13; self.y = 8
+		self.x = 18; self.y = 29
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
 		self.rx = 1; self.ry = 0
@@ -129,7 +129,9 @@ class Game(object):
 		actions = self.actions
 		self.actions = []
 		for a in actions: a()
-		if self.keys[keys.ESCAPE]: pyglet.app.exit()
+		if self.keys[keys.ESCAPE]:
+			print '%d,%d' % (self.player.x,self.player.y)
+			pyglet.app.exit()
 
 	def add_actor(self, a):
 		self.actions.append(lambda:self.actors.append(a))
@@ -140,7 +142,14 @@ class Game(object):
 pyglet.resource.path = ['art']
 pyglet.resource.reindex()
 game = Game()
+
 player = Player(game)
 game.add_actor(player)
 game.player = player
+
+follower = PathFollower(game)
+game.add_actor(follower)
+follower.x = 24
+follower.y = 32
+
 pyglet.app.run()
