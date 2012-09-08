@@ -66,7 +66,7 @@
    <property name="visible" value="1"/>
   </properties>
   <object x="1069" y="1110" height="1"/>
-  <object name="playerSpawn" type="playerSpawn" gid="1160" x="448" y="1728"/>
+  <object name="playerSpawn" type="playerSpawn" gid="1160" x="1376" y="768"/>
   <object gid="1222" x="684" y="1624"/>
   <object gid="1222" x="692" y="1615"/>
   <object gid="1222" x="423" y="807"/>
