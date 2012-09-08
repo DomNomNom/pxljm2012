@@ -106,10 +106,10 @@ class Player(Mover):
 			if self.dx == 0:
 				self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 		# shapeshifting
-		if game.keys[keys.NUM_1]:
+		if game.keys[keys._1]:
 			self.sprite.image = game.level.image_by_id(self.init_gid)
 			self.can_move = True
-		if game.keys[keys.NUM_2]:
+		if game.keys[keys._2]:
 			self.sprite.image = game.level.image_by_id(1222) # the box.
 			self.can_move = False
 
