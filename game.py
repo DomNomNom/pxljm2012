@@ -24,6 +24,7 @@ class Player(object):
 		self.x = 13; self.y = 8
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
+		self.rx = 1; self.ry = 0
 		self.v = 1.7
 
 		self.sprite = pyglet.sprite.Sprite(
@@ -31,6 +32,11 @@ class Player(object):
 			self.x * 32,
 			-self.y * 32,
 			batch=game.objbatch)
+
+	def planmove(self, game):
+		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
+		if self.dx == 0:
+			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 
 	def tick(self, game):
 		# completing an existing move
@@ -45,9 +51,10 @@ class Player(object):
 
 		# starting a new move
 		if self.dx == 0 and self.dy == 0:
-			self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
-			if self.dx == 0:
-				self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+			self.planmove(game)
+
+			self.rx = self.dx
+			self.ry = self.dy
 
 			# blocked?
 			if game.level.is_blocked(self.x + self.dx, self.y + self.dy):
