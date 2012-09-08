@@ -133,7 +133,7 @@ class Game(object):
 		glLoadIdentity()
 		glTranslatef(self.win.width/2, self.win.height/2,0)
 		glScalef(2,2,1)
-		glTranslatef(int(-player.sprite.x),int(-player.sprite.y),0)
+		glTranslatef(int(-self.player.sprite.x),int(-self.player.sprite.y),0)
 		self.win.clear()
 		self.level.draw()
 		self.objbatch.draw()
