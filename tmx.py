@@ -125,9 +125,6 @@ class TileMap:
         for layer in self.layers_ordered:
             if layer['props'].get('visible','0') != '0':
                 layer['batch'].draw()
-                
-            if len(self.layers_ordered) == 1: # TODO: remove me
-                print layer
 
     def get(self, layer, x, y):
         ll = self.layers[layer]
