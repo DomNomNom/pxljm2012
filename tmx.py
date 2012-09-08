@@ -80,20 +80,24 @@ class TileMap:
                                 -y * 32,
                                 batch=batch))
 
+                props = {}
+                for propNode in layerNode.xpath('.//property'):
+                    props[propNode.attrib.get('name')] = propNode.attrib.get('value')
+
                 l = {
                         'width': width,
                         'height': height,
                         'data': arr,
                         'batch': batch,
-                        'name': name
+                        'name': name,
+                        'props': props
                         }
                 self.layers[name] = l
                 self.layers_ordered.append(l)
 
     def draw(self):
         for layer in self.layers_ordered:
-# hack hack use layer props
-            if layer['name'] != 'collision':
+            if layer['props'].get('visible','0') != '0':
                 layer['batch'].draw()
 
     def is_blocked(self, x, y):

@@ -10,3 +10,11 @@
 - doing something in sight of a guard
 
 
+Engine things:
+==============
+
+- basic maploader
+- player spawner
+- info points?  -- interact with to show text
+- mobs following 2dscript
+- 2dscript nodes
