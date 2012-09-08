@@ -96,12 +96,22 @@ class Player(Mover):
 	def __init__(self,game,props):
 		super(Player,self).__init__(game,props)
 		game.player = self
+		self.can_move = True
+		self.init_gid = int(props['gid'])
 
 	# player plans move based on input
 	def planmove(self, game):
-		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
-		if self.dx == 0:
-			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+		if self.can_move:	# only if in a form that can!! (not a box)
+			self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
+			if self.dx == 0:
+				self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+		# shapeshifting
+		if game.keys[keys.NUM_1]:
+			self.sprite.image = game.level.image_by_id(self.init_gid)
+			self.can_move = True
+		if game.keys[keys.NUM_2]:
+			self.sprite.image = game.level.image_by_id(1222) # the box.
+			self.can_move = False
 
 class FloorButton(Mover):
 	# a 'button' on the floor that is triggered by stepping on it
