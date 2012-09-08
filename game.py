@@ -184,10 +184,12 @@ class Game(object):
 		self.win.event(self.on_draw)
 		self.at = 0.0
 		self.objbatch = pyglet.graphics.Batch()
+		self.uibatch = pyglet.graphics.Batch()
 
 		self.actions = []
 		self.actors = []
 		self.level = tmx.TileMap('art/map.tmx')
+		self.ui = tmx.TileMap('art/UI.tmx')
 		self.player = None
 		self.flags = {}
 	
@@ -210,6 +212,11 @@ class Game(object):
 
 		# UI
 		glLoadIdentity()
+		#glTranslatef(0, 100,0)
+		glScalef(2,2,1)
+		
+		self.ui.draw() # FIXME: why is it not drawing
+		self.uibatch.draw()
 		
 
 	def tick(self):

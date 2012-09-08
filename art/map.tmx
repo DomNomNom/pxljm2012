@@ -50,7 +50,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   eJzt2tlu00AUxvGxTYL6AvQdeBYQ3IBA4oKtwIuwgwQXpYWACkJCLEI8Qqs+B0gsV2UpXJeoMEf2qOPJeOwsjiP7L/WXxbUT93w5M+Ooq7FSqwAAAAAAAAAAYGH903pJWJI0f55dMdTuRUrdKHA3Svdp+jy7Qmp9S9f8YYGbnjzWF+C822qSPFB/Hve16x63S/LYiplzyowznpg8pA9O6hqe9jgVqK0c/0cf+93yW9svyMm2leXZdL0WiZ3HcV2jp0qpy0tKncusLKXbzf5uP8jzn/rYnjrwQz/XP4W+6ZtPma/R6Dkd7XBv2Xl8OJTm4bLzkP37Km/cPL7om4+Zz5482sZ3TVE0ntt5HKvQHyYP0ydF/SHnIO9p5+A7rzaOV+58ITWz6yOK5mTfeFWlP+R+O3vuy2OY/c7Oo6vrNPm7ByqdZ2VulcdF82us3cnWUVJ3uzdC/WHnsauP3bH8Ig9vHrtZbeTxTjamXwiM7ScqrK/cPEI5k0c+D1dojo3U6DxtDJ3XtvMIIY+UCnwvaGqzGafsbWa+jZK05n9j8phVf7z3kO2Xonwem3G+Xm5fmPu1GeVRdT11JEk1Xctx+a7FQ3mY2ux78nDngjjrE3u7b1vo+tvOI3SMvR43WdiarnMd/XG2Xz6HTOKavrkaWCc86IWv1eUafc+TxXJLMqkyXs3SFX2zMuHryrW6XKMvJwd8/dHWPEwdLlr1qyMjH1kvHE78oiTfH23pDVE0TvcD6y13jVWHfoHYqXdb+mKSPnLz6OqadN7WPNtMHjJenY/yefj2R33W4+r9QTaTG4yxr6wxXzr2pnx/TEcyeGXlMRgzUxf/ezJ9HjbqO192fQcV8kA9tS/ijldNn3PXhfqDddVi5YFm8mC8mr1J1kFub1TJg/XWbNhzgS8H+qM5bgaMV83n8U5768nG7DPNNTpGPS7J4432OpAH5of5Y/5eaE+0jZrfh3GtnOTwXDsTpbmY7c9KjmMtOz3f59PMHRtxeB5BMx4twDl0XdnYZON7QyCvSk8wv6PN+HwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAQLv8B2ZpaMo=
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
@@ -112,7 +112,11 @@
     <property name="id" value="32"/>
    </properties>
   </object>
-  <object gid="1423" x="1536" y="1024"/>
+  <object type="button" gid="1423" x="1536" y="1024">
+   <properties>
+    <property name="id" value="TODO"/>
+   </properties>
+  </object>
   <object gid="1423" x="1536" y="704"/>
  </objectgroup>
  <objectgroup name="doors" width="100" height="100">
