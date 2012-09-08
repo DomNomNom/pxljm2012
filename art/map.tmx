@@ -50,7 +50,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2ttu0zAcx3EnoUV7AfZSILgBgcQFpwEvwhkkuBgbFDQQEuIgxCNsYq8BEoercRhcj2pgK7HqeI6Tpk0dJV9pn3bNkjb9//q3nWqrsRCrAAAAAAAAAACgtf5Jg8QvScKfZ1+MpbuRENcL3InSfUKfZ1+oWt+UNX9Q4IYjj/UWnHdX1ckDzedxT7rmcKskj62YOafMNOOJzkP1wQlZw1MOJz21Vcf/kcd+N/yW9gtyMm1leYauV5uYeRyTNXoihLi0JMTZzMpSul3vb/eDevxTHjsQEz/kY/lT6Ju8+ZT5GoWvQZuYebw/lOZhM/NQ+w9F3rR5fJE3HzOfe5CH65qiaDw38zhaoT90HrpPivpDnYN6TTMHPQ9tWULXa97s+UK9b7M+A1E8J7vGqyr9oe4/ZI9deYyzv7ny6Bv1vkcinWfV3Kp+L5pfY+l2to5SdTd7w9cfZh678tgdwy/ycOaxm9VG/b6TjennPWP78QrrKzsPX87kkc/D5ptjI3FwntbG1nObebhsx5PeIQ/5xj3fC+rabMYpc5teB0RJWvO/cbU8tmN3LuQxqdk7B7X9YpTPYzPO18vuC32/5smjiCuPquupI0kqdC2n5boW9+Wha7PvyMOeC+KsT8ztrm2+628zD98x5npcZ2EKXecm+uPMsHwOqeOqvLniWSfcH/iv1dU1+p4ji+WOZFJlvJqny/Jmpebzqmt1dY2+nEy4+qOreeg6XDDq10RGLmq9cDhxi5J8f3SlN5SicXroWW/Za6wmDAvEVr270hd1+sjOo69r0kVbc2zTeajx6lyUz8O1P5qzHlfvD7KpbzTFvmqN+cKyN+PrYzYqg5dGHqMpM7Xxvyez52Givotl1ndUIQ80U/si9ngV+pz7ztcfrKvalQfC5MF4NX911kF2b1TJg/XWfJhzgSsH+iMcOwPGq/B5vJXeOLLR+8xyjY6DHpXk8Vp65ckDi8P8sXjPpcfSRsOvw7hWTuXwTDodpbno7U9LjmMtOzvX51PPHRuxfx5BGA9bcA59VzY2mfjeEMir0hPM7+gyPt8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA0C3/AeMxa/A=
+   eJzt2tlu00AUxvGxTYL6AvQdeBYQ3IBA4oKtwIuwgwQXpYWACkJCLEI8Qqv2NUBiuSpL4bpUhTmyRxlPx2NncRzZf6m/LK6duOfLmRlHXY6VWgYAAAAAAAAAAHPrn9ZLwpKk+fPsij3tXqTUjQJ3o3Sfps+zK6TWt3TNHxa46cljdQ7Ou63GyQP153Ffu+5xuySPjZg5p8wo44nJQ/rgpK7haY9TgdrK8X/0sd8tv7X9gpxsG1meTddrnth5HNc1eqqUuryg1LnM0kK63ezv9oM8/6mP7amhH/q5/in0Td98ynyNDp7T0Q73lp3Hh0NpHi47D9m/r/JGzeOLvvmY+ezJo2181xRF47mdx7EK/WHyMH1S1B9yDvKedg6+82rjeOXOF1Izuz6iaE72jVdV+kPuN7Pnvjz2st/ZeXR1nSZ/90Cl86zMrfK4aH6NtTvZOkrqbvdGqD/sPHb0sduWX+ThzWMnq4083s7G9AuBsf1EhfWVm0coZ/LI5+EKzbGROjhPG3vOa9t5+GzFw94hD/2HB74XNLVZj1P2NjPfRkla879xtTy2Yn8u5DGs2XsP2X4pyuexHufr5faFuV8J5FHEl0fV9dSRJNV0LUfluxYP5WFqs+/Jw50L4qxP7O2+baHrbzuP0DH2etxkYWu6znX0x9l++Rwyjmv65mpgnfCgF75Wl2v0XU8Wiy3JpMp4NU1X9M3SmK8r1+pyjb6YDPn6o615mDpctOpXR0Y+sl44nPhFSb4/2tIbomic7gfWW+4aqw79ArFT77b0xTh95ObR1TXprK14tpk8ZLw6H+Xz8O2P+qzG1fuDbMY3GGFfWWO+dOxO+P6YjGTwyspjMGKmLv73ZPI8bNR3tuz6DirkgXpqX8Qdr5o+564L9QfrqvnKA83kwXg1feOsg9zeqJIH663psOcCXw70R3PcDBivms/jnfbWk43ZZ5JrdBz0uCSPN9rrQB6YHeaP2XuhPdHWan4fxrVyksNz7UyU5mK2Pys5jrXs5HyfTzN3rMXheQTNeDQH59B1ZWOTje8NgbwqPcH8jjbj8w0AAAAAAAAAAAAAAAAAAAAAAAAAAAAA7fIfR7hozA==
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
@@ -141,13 +141,12 @@
   <properties>
    <property name="visible" value="1"/>
   </properties>
-  <object x="1069" y="1110" height="1"/>
   <object name="playerSpawn" type="playerSpawn" gid="1160" x="512" y="1568"/>
-  <object gid="1222" x="684" y="1624"/>
-  <object gid="1222" x="692" y="1615"/>
+  <object gid="1222" x="672" y="1600"/>
+  <object gid="1222" x="640" y="1600"/>
   <object gid="1222" x="423" y="807"/>
   <object gid="1222" x="450" y="804"/>
-  <object gid="1222" x="478" y="805"/>
+  <object gid="1222" x="512" y="832"/>
   <object gid="1222" x="514" y="800"/>
   <object gid="1222" x="419" y="835"/>
   <object gid="1222" x="450" y="837"/>
@@ -280,6 +279,38 @@
   <object gid="1848" x="992" y="832"/>
   <object gid="1237" x="1794" y="1052"/>
   <object gid="1237" x="1788" y="1060"/>
+  <object gid="812" x="1856" y="1024"/>
+  <object gid="812" x="1888" y="992"/>
+  <object gid="812" x="1920" y="960"/>
+  <object gid="812" x="1856" y="1088"/>
+  <object gid="812" x="1888" y="1120"/>
+  <object gid="813" x="1856" y="1088"/>
+  <object gid="813" x="1888" y="1120"/>
+  <object gid="813" x="1952" y="1152"/>
+  <object gid="813" x="1952" y="1152"/>
+  <object gid="813" x="1920" y="1152"/>
+  <object gid="813" x="1984" y="1152"/>
+  <object gid="813" x="2016" y="1152"/>
+  <object gid="813" x="2048" y="1120"/>
+  <object gid="813" x="2080" y="1088"/>
+  <object gid="811" x="2048" y="1120"/>
+  <object gid="811" x="2080" y="1088"/>
+  <object gid="811" x="2112" y="1056"/>
+  <object gid="811" x="2112" y="1024"/>
+  <object gid="811" x="2080" y="992"/>
+  <object gid="811" x="2016" y="960"/>
+  <object gid="815" x="2048" y="1120"/>
+  <object gid="815" x="2080" y="1088"/>
+  <object gid="814" x="1952" y="928"/>
+  <object gid="814" x="1984" y="928"/>
+  <object gid="814" x="1856" y="1024"/>
+  <object gid="814" x="1888" y="992"/>
+  <object gid="814" x="1920" y="960"/>
+  <object gid="814" x="2016" y="960"/>
+  <object gid="814" x="2048" y="960"/>
+  <object gid="814" x="2080" y="992"/>
+  <object gid="2035" x="800" y="768"/>
+  <object gid="1222" x="672" y="1632"/>
  </objectgroup>
  <layer name="ai_paths" width="100" height="100" opacity="0.86">
   <properties>

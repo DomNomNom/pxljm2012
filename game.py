@@ -177,7 +177,7 @@ class FormPickup(Mover):
 
 class Game(object):
 	def __init__(self):
-		self.win = pyglet.window.Window()
+		self.win = pyglet.window.Window(resizable=True, fullscreen=False)
 		pyglet.clock.schedule(self.update)
 		self.keys = keys.KeyStateHandler()
 		self.win.push_handlers(self.keys)
@@ -208,6 +208,10 @@ class Game(object):
 		self.level.draw()
 		self.objbatch.draw()
 
+		# UI
+		glLoadIdentity()
+		
+
 	def tick(self):
 		for a in self.actors: a.tick(self)
 		actions = self.actions
@@ -224,6 +228,7 @@ class Game(object):
 		self.actions.append(lambda:self.actors.remove(a))
 
 objtypes = {
+		None : Mover,
 		'playerSpawn': Player,
 		'aiSpawn': PathFollower,
 		'button': FloorButton,
@@ -237,6 +242,7 @@ game = Game()
 
 for obj in game.level.objects:
 	factory = objtypes.get(obj['type'],None)
+		
 	if factory is None:
 		print 'Unknown objecttype %s' % obj['type']
 		continue
