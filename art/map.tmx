@@ -50,7 +50,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2ktu00Acx/EZm0TqBeilQCAhEEgseIjHBeAGvEGCRWkhoIKQEI8FR2gPAlIpK16FdakKM7KHjIexPXbi2NjfxadyHDt1/r/8Z8ZpVyIhVgAAAAAAAAAAQGf9VkZxsThu/zqHYk+5K4W4nuOOTI5p+zqHQtf6pqr5gxw3PHmsdeC6+6pOHmg+j3vKNY9bJXls5mDOmaoynpg8dB8cVTU84XG8oLb6/J/q3C+WHzLJJDTDtuvVJXYeh1Xdnwghri4JcTp1ZSnZn1dL7Zs6dySmvsrp8WrzL7Pvk3rwIbUtF/de/wd2Hu8OJHm43DzGIqtqHh/Vg/eprQHk4bunyBvP7TwOBfaHzqCsP8wcYuexab1Gn8crd77QNbbro+XNyb7xKqQ/QvLQfHkMja7xRCTzrJ5b9fZ+5L/3jpTb6TpK193ujdD+2FHnfrZ8Jw9vHjtpbfS2rpOuyVmZrZHtSM766lhJHkXIY5qHKy8Hw52nbb48yq6DPBKi4HtBU5uNKGHvM+sAGSc1/xWRxzzsRf7Pv95/Xmbz2Iiyz9s9YT9enVMeoZkcjBNt17Iq3714UR5me9+ThzvnR7F/rhinx9aZP0K+XzFZ2NqucxP9cWpcPofUcVn9uFSwTrg/yn9O36tvy2nf2Bks9ySTkPFqni6qHxdqvq6+V9+SSe2XPRn0PQ+zfc6qX2hGoWvcuuz+6EtvaHn3fuOC9Zah11gbDl/dmvybVF/6oipfH/G3p8VY9ewzeejx6ozM5uE7Hs1Zi8L7g2zqm1Q4dld54djtwHsYMp3BSyuPScVMXfzvyex52KjvYtn1nQTkgWZqn8cdr9q+5qEr6g/WVd3KA+3kwXg1f3XWQW5vhOTBems+7LnAlwP90R43A8ar9vN4q7zxZGOOmeUeHf96VJLHa+VVQR5YHOaPxXuuPFbWG/49jGvldA7PlJMyycXsf1pyHmvZ2fk+n2buWI+K5xG042EHrmHoysYmG98bAlkhPcH8jj7j8w0AAAAAAAAAAAAAAAAAAAAAAAAAAAAA/fIHsLKOow==
+   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
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
@@ -153,16 +153,13 @@
   <object gid="1222" x="450" y="837"/>
   <object type="playerForm" gid="1222" x="448" y="1504">
    <properties>
-    <property name="formID" value="1"/>
+    <property name="formID" value="2"/>
    </properties>
   </object>
   <object type="aiSpawn" gid="1510" x="800" y="1056"/>
   <object type="aiSpawn" gid="1544" x="736" y="1152"/>
   <object type="aiSpawn" gid="1544" x="832" y="1152"/>
   <object gid="1803" x="960" y="704"/>
-  <object gid="1880" x="928" y="832"/>
-  <object gid="1888" x="960" y="832"/>
-  <object gid="1888" x="992" y="832"/>
   <object gid="1904" x="864" y="832"/>
   <object gid="1904" x="896" y="832"/>
   <object gid="1689" x="992" y="768"/>
@@ -228,6 +225,61 @@
   <object type="aiSpawn" gid="1510" x="1504" y="736"/>
   <object type="aiSpawn" gid="1510" x="1312" y="1024"/>
   <object gid="2044" x="928" y="1024"/>
+  <object gid="2515" x="480" y="1024"/>
+  <object gid="2513" x="576" y="992"/>
+  <object gid="2658" x="512" y="992">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="512" y="1024">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="480" y="1056">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="448" y="992">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="448" y="1024">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="448" y="1056">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="512" y="1056">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="2658" x="480" y="992">
+   <properties>
+    <property name="animationLength" value="6"/>
+    <property name="animationPeriod" value="5"/>
+   </properties>
+  </object>
+  <object gid="1848" x="928" y="832"/>
+  <object gid="1848" x="960" y="832"/>
+  <object gid="1848" x="992" y="832"/>
+  <object gid="1237" x="1794" y="1052"/>
+  <object gid="1237" x="1788" y="1060"/>
  </objectgroup>
  <layer name="ai_paths" width="100" height="100" opacity="0.86">
   <properties>
@@ -248,7 +300,7 @@
  <objectgroup name="ai_dynamicActions" width="100" height="100">
   <object gid="1419" x="1536" y="704"/>
  </objectgroup>
- <layer name="collision" width="100" height="100" opacity="0.68">
+ <layer name="collision" width="100" height="100" visible="0" opacity="0.68">
   <properties>
    <property name="visible" value="0"/>
   </properties>
