@@ -161,6 +161,19 @@ class Door(Mover):
 		game.level.set_blocked(self.x, self.y, self.state <= 2)
 		super(Door,self).tick(game)
 
+class FormPickup(Mover):
+	def __init__(self,game,props):
+		super(FormPickup,self).__init__(game,props)
+		self.form = props['formID']
+
+	def tick(self,game):
+		super(FormPickup,self).tick(game)
+		if game.player.x == self.x and game.player.y == self.y:
+			game.remove_actor(self)
+			forms[self.form]['can_use'] = True
+			print 'obtained form %s' % self.form
+			# todo: some silly effect
+			# show this stuff in UI
 
 class Game(object):
 	def __init__(self):
@@ -215,6 +228,7 @@ objtypes = {
 		'aiSpawn': PathFollower,
 		'button': FloorButton,
 		'door': Door,
+		'playerForm': FormPickup,
 		}
 
 pyglet.resource.path = ['art']
