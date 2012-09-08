@@ -34,6 +34,7 @@ class Mover(object):
 			batch=game.objbatch)
 
 	def planmove(self, game):
+		# default behavior isnt so interesting.
 		pass
 
 	def tick(self, game):
