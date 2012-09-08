@@ -13,8 +13,9 @@ for folderName in os.listdir(path.join(basePath, "tiles")):
     # read
     images = []
     width = height = 0
-    for infile in glob.glob(path.join(basePath, "tiles", folderName, "*.png")):
+    for infile in sorted(glob.glob(path.join(basePath, "tiles", folderName, "*.png"))):
         file, ext = os.path.splitext(infile)
+        print file
         im = Image.open(infile)
         width = max(width, im.size[0])
         height += im.size[1]

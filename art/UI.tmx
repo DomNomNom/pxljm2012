@@ -8,10 +8,10 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYB7FgwYDAO5IAS0=
+   eJxjZGBgYBzFgwYDAFB4AGU=
   </data>
  </layer>
  <objectgroup name="highlight" width="100" height="1">
-  <object gid="1" x="0" y="32"/>
+  <object gid="5" x="0" y="32"/>
  </objectgroup>
 </map>
