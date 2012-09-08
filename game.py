@@ -44,10 +44,10 @@ class Game(object):
 	def on_draw(self):
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
-		glOrtho(0,self.win.width,self.win.height,0,-1,1)
+		glOrtho(0,self.win.width,0,self.win.height,-1,1)
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
-		glTranslatef(-32*8,-32*4,0)
+		glTranslatef(-32*8,32*15,0)
 		self.level.draw()
 
 	def tick(self):

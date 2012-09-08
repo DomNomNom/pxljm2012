@@ -77,18 +77,21 @@ class TileMap:
                             self.tiles.append(pyglet.sprite.Sprite(
                                 self.image_by_id(arr[y * width + x]),
                                 x * 32,
-                                y * 32,
+                                -y * 32,
                                 batch=batch))
 
                 l = {
                         'width': width,
                         'height': height,
                         'data': arr,
-                        'batch': batch
+                        'batch': batch,
+                        'name': name
                         }
                 self.layers[name] = l
                 self.layers_ordered.append(l)
 
     def draw(self):
         for layer in self.layers_ordered:
-            layer['batch'].draw()
+# hack hack use layer props
+            if layer['name'] != 'collision':
+                layer['batch'].draw()
