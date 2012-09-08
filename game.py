@@ -93,6 +93,14 @@ class Player(Mover):
 		if self.dx == 0:
 			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 
+class FloorButton(Mover):
+	# a 'button' on the floor that is triggered by stepping on it
+	def tick(self, game):
+		game.flags[self.flag] = any(a in self.actors \
+			if a != self and a.x == self.x and a.y == self.y)
+		super.tick(FloorButton, game)
+
+
 class Game(object):
 	def __init__(self):
 		self.win = pyglet.window.Window()
@@ -107,6 +115,7 @@ class Game(object):
 		self.actors = []
 		self.level = tmx.TileMap('art/map.tmx')
 		self.player = None
+		self.flags = {}
 	
 	def update(self, dt):
 		# utterly standard time accumulator
