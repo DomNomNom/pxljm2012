@@ -111,10 +111,14 @@ class TileMap:
                 obj = {}
                 obj['name'] = objNode.attrib.get('name',None)
                 obj['type'] = objNode.attrib.get('type',None)
+                obj['x'] = int(objNode.attrib.get('x'))/32;
+                obj['y'] = int(objNode.attrib.get('y'))/32;
 
+                # load custom props
                 for propNode in objNode.xpath('.//property'):
                     obj[propNode.attrib.get('name')] = propNode.attrib.get('value')
 
+                self.objects.append(obj)
 
     def draw(self):
         for layer in self.layers_ordered:
