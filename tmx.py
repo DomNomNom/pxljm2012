@@ -5,6 +5,7 @@ import struct
 import StringIO
 import array
 import pyglet
+from pyglet.gl import *
 
 class SaneImageGrid(object):
     # row 0 is the top one.
@@ -19,6 +20,13 @@ class SaneImageGrid(object):
         col = image_id % self.w
         return self.ig[row * self.w + col]
 
+def _setfilter(img):
+    tex = img.get_texture()
+    glBindTexture(tex.target, tex.id)
+    glTexParameteri(tex.target, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+    glTexParameteri(tex.target, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+    glBindTexture(tex.target, 0)
+
 class TileMap:
     def image_by_id(self, image_id):
         ss = None
@@ -31,12 +39,12 @@ class TileMap:
             raise Exception('bogus image id: %d' % image_id)
         return ss['image'].get(image_id - last)
 
-
     def __init__(self, filename):
         self.sheets = {}
         self.tiles = []
         self.layers = {}
         self.layers_ordered = []
+        self.objects = []
 
         with open(filename,'r') as f:
             doc = etree.parse(f)
@@ -47,6 +55,10 @@ class TileMap:
                 source = imageNode.attrib.get('source')
                 print 'load tileset %s' % (source,)
                 raw_image = pyglet.resource.image(source)
+
+                # set a sane filtering mode
+                _setfilter(raw_image)
+
                 self.sheets[tsNode.attrib.get('name')] = {
                         'firstgid': int(tsNode.attrib.get('firstgid')),
                         'image': SaneImageGrid(raw_image,
@@ -94,6 +106,20 @@ class TileMap:
                         }
                 self.layers[name] = l
                 self.layers_ordered.append(l)
+
+            for objNode in doc.xpath('//object'):
+                obj = {}
+                obj['name'] = objNode.attrib.get('name',None)
+                obj['type'] = objNode.attrib.get('type',None)
+                obj['gid'] = objNode.attrib.get('gid',None)
+                obj['x'] = int(objNode.attrib.get('x'))/32;
+                obj['y'] = int(objNode.attrib.get('y'))/32 -1;
+
+                # load custom props
+                for propNode in objNode.xpath('.//property'):
+                    obj[propNode.attrib.get('name')] = propNode.attrib.get('value')
+
+                self.objects.append(obj)
 
     def draw(self):
         for layer in self.layers_ordered:

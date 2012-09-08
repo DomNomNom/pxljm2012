@@ -20,15 +20,17 @@ def _keyaxis(game,neg,pos):
 	return val
 
 class Mover(object):
-	def __init__(self, game, x, y):
-		self.x = x; self.y = y
+	def __init__(self, game, props):
+		self.x = props['x']; self.y = props['y']
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
-		self.rx = 1; self.ry = 0
-		self.v = 1.7
+		self.rx = 0; self.ry = 0
+		self.v = float(props.get('v','1.7'))
+
+		gid = int(props.get('gid','2'))
 
 		self.sprite = pyglet.sprite.Sprite(
-			game.level.image_by_id(2),
+			game.level.image_by_id(gid),
 			self.x * 32,
 			-self.y * 32,
 			batch=game.objbatch)
@@ -73,6 +75,10 @@ follow_dirs = [
 		(0,-1)]
 
 class PathFollower(Mover):
+	def __init__(self,game,props):
+		super(PathFollower,self).__init__(game,props)
+		print 'PathFollower %s' % props
+
 	# ai that follows invisible arrows
 	def planmove(self, game):
 		movecmd = game.level.get('ai_paths',self.x,self.y)
@@ -87,6 +93,10 @@ class PathFollower(Mover):
 
 
 class Player(Mover):
+	def __init__(self,game,props):
+		super(Player,self).__init__(game,props)
+		game.player = self
+
 	# player plans move based on input
 	def planmove(self, game):
 		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
@@ -95,10 +105,14 @@ class Player(Mover):
 
 class FloorButton(Mover):
 	# a 'button' on the floor that is triggered by stepping on it
+	def __init__(self,game,props):
+		self.flag = props['id']
+		super(FloorButton,self).__init__(game,props)
+
 	def tick(self, game):
-		game.flags[self.flag] = any(a for a in self.actors \
+		game.flags[self.flag] = any(a for a in game.actors \
 			if (a != self and a.x == self.x and a.y == self.y))
-		super.tick(FloorButton, game)
+		super(FloorButton,self).tick(game)
 
 
 class Game(object):
@@ -127,8 +141,9 @@ class Game(object):
 	def on_draw(self):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
-		glTranslatef(int(-player.sprite.x),int(-player.sprite.y),0)
 		glTranslatef(self.win.width/2, self.win.height/2,0)
+		glScalef(2,2,1)
+		glTranslatef(int(-self.player.sprite.x),int(-self.player.sprite.y),0)
 		self.win.clear()
 		self.level.draw()
 		self.objbatch.draw()
@@ -148,15 +163,21 @@ class Game(object):
 	def remove_actor(self, a):
 		self.actions.append(lambda:self.actors.remove(a))
 
+objtypes = {
+		'playerSpawn': Player,
+		'aiSpawn': PathFollower,
+		'button': FloorButton,
+		}
+
 pyglet.resource.path = ['art']
 pyglet.resource.reindex()
 game = Game()
 
-player = Player(game, 18, 29)
-game.add_actor(player)
-game.player = player
-
-follower = PathFollower(game, 24, 32)
-game.add_actor(follower)
+for obj in game.level.objects:
+	factory = objtypes.get(obj['type'],None)
+	if factory is None:
+		print 'Unknown objecttype %s' % obj['type']
+		continue
+	game.add_actor(factory(game, obj))
 
 pyglet.app.run()
