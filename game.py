@@ -19,11 +19,12 @@ def _keyaxis(game,neg,pos):
 	if game.keys[pos]: val += 1
 	return val
 
-class Player(object):
+class Mover(object):
 	def __init__(self, game):
-		self.x = 13; self.y = 8
+		self.x = 18; self.y = 29
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
+		self.rx = 1; self.ry = 0
 		self.v = 1.7
 
 		self.sprite = pyglet.sprite.Sprite(
@@ -31,6 +32,10 @@ class Player(object):
 			self.x * 32,
 			-self.y * 32,
 			batch=game.objbatch)
+
+	def planmove(self, game):
+		# default behavior isnt so interesting.
+		pass
 
 	def tick(self, game):
 		# completing an existing move
@@ -45,9 +50,11 @@ class Player(object):
 
 		# starting a new move
 		if self.dx == 0 and self.dy == 0:
-			self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
-			if self.dx == 0:
-				self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+			self.planmove(game)
+
+			if self.dx != 0 or self.dy != 0:
+				self.rx = self.dx
+				self.ry = self.dy
 
 			# blocked?
 			if game.level.is_blocked(self.x + self.dx, self.y + self.dy):
@@ -58,6 +65,33 @@ class Player(object):
 		# todo: set anim frame
 		self.sprite.x = self.x * 32 + self.ux
 		self.sprite.y = -(self.y * 32 + self.uy)
+
+follow_dirs = [
+		(0,1),
+		(-1,0),
+		(1,0),
+		(0,-1)]
+
+class PathFollower(Mover):
+	# ai that follows invisible arrows
+	def planmove(self, game):
+		movecmd = game.level.get('ai_paths',self.x,self.y)
+		if movecmd is None or movecmd == 0:
+			# no move command in the map here.
+			# just continue the direction we were going
+			self.dx = self.rx
+			self.dy = self.ry
+			return
+		basecmdid = game.level.sheets['AI']['firstgid']
+		self.dx, self.dy = follow_dirs[movecmd - basecmdid]
+
+
+class Player(Mover):
+	# player plans move based on input
+	def planmove(self, game):
+		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
+		if self.dx == 0:
+			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 
 class Game(object):
 	def __init__(self):
@@ -95,7 +129,9 @@ class Game(object):
 		actions = self.actions
 		self.actions = []
 		for a in actions: a()
-		if self.keys[keys.ESCAPE]: pyglet.app.exit()
+		if self.keys[keys.ESCAPE]:
+			print '%d,%d' % (self.player.x,self.player.y)
+			pyglet.app.exit()
 
 	def add_actor(self, a):
 		self.actions.append(lambda:self.actors.append(a))
@@ -106,7 +142,14 @@ class Game(object):
 pyglet.resource.path = ['art']
 pyglet.resource.reindex()
 game = Game()
+
 player = Player(game)
 game.add_actor(player)
 game.player = player
+
+follower = PathFollower(game)
+game.add_actor(follower)
+follower.x = 24
+follower.y = 32
+
 pyglet.app.run()
