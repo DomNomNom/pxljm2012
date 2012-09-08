@@ -51,8 +51,9 @@ class Mover(object):
 		if self.dx == 0 and self.dy == 0:
 			self.planmove(game)
 
-			self.rx = self.dx
-			self.ry = self.dy
+			if self.dx != 0 or self.dy != 0:
+				self.rx = self.dx
+				self.ry = self.dy
 
 			# blocked?
 			if game.level.is_blocked(self.x + self.dx, self.y + self.dy):
