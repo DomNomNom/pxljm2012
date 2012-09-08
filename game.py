@@ -108,31 +108,33 @@ class FloorButton(Mover):
 	def __init__(self,game,props):
 		self.flag = props['id']
 		super(FloorButton,self).__init__(game,props)
+		self.sprite.scale = 0
+	
+	def _actor_check(self,a):
+		if type(a) in (FloorButton,Door):
+			return False #LOLOL door on button...
+		return True
 
 	def tick(self, game):
 		game.flags[self.flag] = any(a for a in game.actors \
-			if (a != self and a.x == self.x and a.y == self.y))
+			if (self._actor_check(a) and a.x == self.x and a.y == self.y))
 		super(FloorButton,self).tick(game)
 
 class Door(Mover):
 	# a door which opens when triggered.
 	def __init__(self,game,props):
 		self.flags = props['buttons'].split(',')
-		self.state = False
-		self.orig_gid = int(props['gid'])
+		self.state = 0
+		self.orig_gid = int(props['gid']) +2
 		self.open_gid = self.orig_gid + 7
 		super(Door,self).__init__(game,props)
 	
 	def tick(self, game):
 		new_state = any(game.flags.get(f,False) for f in self.flags)
-		if new_state != self.state:
-			self.state = new_state
-			if (self.state):
-				self.sprite.image = game.level.image_by_id(self.open_gid)
-				game.level.set_blocked(self.x, self.y, True)
-			else:
-				self.sprite.image = game.level.image_by_id(self.orig_gid)
-				game.level.set_blocked(self.x, self.y, False)
+		open_state = new_state and 5 or 0
+		self.state += _sign(open_state - self.state)
+		self.sprite.image = game.level.image_by_id(self.orig_gid + self.state)
+		game.level.set_blocked(self.x, self.y, self.state <= 2)
 		super(Door,self).tick(game)
 
 
