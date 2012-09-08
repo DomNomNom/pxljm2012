@@ -95,3 +95,11 @@ class TileMap:
 # hack hack use layer props
             if layer['name'] != 'collision':
                 layer['batch'].draw()
+
+    def is_blocked(self, x, y):
+        col = self.layers['collision']
+        if x < 0 or x >= col['width']:
+            return True
+        if y < 0 or y >= col['height']:
+            return True
+        return col['data'][y * col['width'] + x] != 0
