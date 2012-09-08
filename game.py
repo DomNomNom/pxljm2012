@@ -110,9 +110,9 @@ class FloorButton(Mover):
 		super(FloorButton,self).__init__(game,props)
 
 	def tick(self, game):
-		game.flags[self.flag] = any(a for a in self.actors \
+		game.flags[self.flag] = any(a for a in game.actors \
 			if (a != self and a.x == self.x and a.y == self.y))
-		super.tick(FloorButton, game)
+		super(FloorButton,self).tick(game)
 
 
 class Game(object):
@@ -166,6 +166,7 @@ class Game(object):
 objtypes = {
 		'playerSpawn': Player,
 		'aiSpawn': PathFollower,
+		'button': FloorButton,
 		}
 
 pyglet.resource.path = ['art']
