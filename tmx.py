@@ -6,6 +6,17 @@ import StringIO
 import array
 import pyglet
 
+class SaneImageGrid(object):
+    def __init__(self, img, w, h):
+        self.ig = pyglet.image.ImageGrid(img,w,h)
+        self.w = w
+        self.h = h
+
+    def get(self, image_id):
+        row = self.h - image_id / self.w - 1
+        col = image_id % self.w
+        return self.ig[row * self.w + col]
+
 class TileMap:
     def image_by_id(self, image_id):
         ss = None
@@ -16,12 +27,12 @@ class TileMap:
                 last = s['firstgid']
         if ss is None:
             raise Exception('bogus image id: %d' % image_id)
-        return ss['image'][image_id - last]
+        return ss['image'].get(image_id - last)
 
 
     def __init__(self, filename):
         self.sheets = {}
-        self.tiles = {}
+        self.tiles = []
         self.layers = {}
         self.layers_ordered = []
 
@@ -36,7 +47,7 @@ class TileMap:
                 raw_image = pyglet.resource.image(source)
                 self.sheets[tsNode.attrib.get('name')] = {
                         'firstgid': int(tsNode.attrib.get('firstgid')),
-                        'image': pyglet.image.ImageGrid(raw_image,
+                        'image': SaneImageGrid(raw_image,
                             int(imageNode.attrib.get('height'))/32,
                             int(imageNode.attrib.get('width'))/32)
                         }
@@ -61,11 +72,11 @@ class TileMap:
                 for y in xrange(0,height):
                     for x in xrange(0,width):
                         if arr[y * width + x]:
-                            pyglet.sprite.Sprite(
+                            self.tiles.append(pyglet.sprite.Sprite(
                                 self.image_by_id(arr[y * width + x]),
                                 x * 32,
                                 y * 32,
-                                batch=batch)
+                                batch=batch))
 
                 l = {
                         'width': width,

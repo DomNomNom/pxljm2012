@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 
 import pyglet
+from pyglet.gl import *
 keys = pyglet.window.key
 FRAME_TIME = 1/30.0
 
@@ -26,6 +27,7 @@ class Game(object):
 		pyglet.clock.schedule(self.update)
 		self.keys = keys.KeyStateHandler()
 		self.win.push_handlers(self.keys)
+		self.win.event(self.on_draw)
 		self.at = 0.0
 
 		self.actions = []
@@ -39,13 +41,21 @@ class Game(object):
 			self.at -= FRAME_TIME
 			self.tick()
 
+	def on_draw(self):
+		glMatrixMode(GL_PROJECTION)
+		glLoadIdentity()
+		glOrtho(0,self.win.width,self.win.height,0,-1,1)
+		glMatrixMode(GL_MODELVIEW)
+		glLoadIdentity()
+		glTranslatef(-32*8,-32*4,0)
+		self.level.draw()
+
 	def tick(self):
 		for a in self.actors: a.tick(self)
 		actions = self.actions
 		self.actions = []
 		for a in actions: a()
 		if self.keys[keys.ESCAPE]: pyglet.app.exit()
-		self.level.draw()
 
 	def add_actor(self, a):
 		self.actions.append(lambda:self.actors.append(a))
