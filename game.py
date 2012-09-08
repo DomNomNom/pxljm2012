@@ -20,12 +20,12 @@ def _keyaxis(game,neg,pos):
 	return val
 
 class Mover(object):
-	def __init__(self, game, x, y):
-		self.x = x; self.y = y
+	def __init__(self, game, props):
+		self.x = props['x']; self.y = props['y']
 		self.ux = 0; self.uy = 0
 		self.dx = 0; self.dy = 0
 		self.rx = 1; self.ry = 0
-		self.v = 1.7
+		self.v = float(props.get('v','1.7'))
 
 		self.sprite = pyglet.sprite.Sprite(
 			game.level.image_by_id(2),
@@ -87,6 +87,10 @@ class PathFollower(Mover):
 
 
 class Player(Mover):
+	def __init__(self,game,props):
+		super.__init__(game,props)
+		game.player = self
+
 	# player plans move based on input
 	def planmove(self, game):
 		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
@@ -149,15 +153,19 @@ class Game(object):
 	def remove_actor(self, a):
 		self.actions.append(lambda:self.actors.remove(a))
 
+objtypes = {
+		
+		}
+
 pyglet.resource.path = ['art']
 pyglet.resource.reindex()
 game = Game()
 
-player = Player(game, 18, 29)
-game.add_actor(player)
-game.player = player
-
-follower = PathFollower(game, 24, 32)
-game.add_actor(follower)
+for obj in game.level.objects:
+	factory = objtypes.get(obj['type'],None)
+	if factory is None:
+		print 'Unknown objecttype %s' % obj['type']
+		continue
+	game.add_actor(factory(obj, game))
 
 pyglet.app.run()
