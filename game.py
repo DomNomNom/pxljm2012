@@ -127,8 +127,9 @@ class Game(object):
 	def on_draw(self):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
-		glTranslatef(int(-player.sprite.x),int(-player.sprite.y),0)
 		glTranslatef(self.win.width/2, self.win.height/2,0)
+		glScalef(2,2,1)
+		glTranslatef(int(-player.sprite.x),int(-player.sprite.y),0)
 		self.win.clear()
 		self.level.draw()
 		self.objbatch.draw()
