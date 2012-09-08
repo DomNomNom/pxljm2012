@@ -19,13 +19,16 @@
   <image source="tileSets/boxes.png" width="448" height="448"/>
  </tileset>
  <tileset firstgid="1417" name="AI" tilewidth="32" tileheight="32">
-  <image source="tileSets/AI.png" width="32" height="192"/>
+  <image source="tileSets/AI.png" width="32" height="224"/>
  </tileset>
- <tileset firstgid="1423" name="myTiles" tilewidth="32" tileheight="32">
+ <tileset firstgid="1424" name="myTiles" tilewidth="32" tileheight="32">
   <image source="tileSets/myTiles.png" width="32" height="96"/>
  </tileset>
- <tileset firstgid="1426" name="aibots" tilewidth="32" tileheight="32">
+ <tileset firstgid="1427" name="aibots" tilewidth="32" tileheight="32">
   <image source="tileSets/aibots.png" width="448" height="448"/>
+ </tileset>
+ <tileset firstgid="1623" name="door_glass" tilewidth="32" tileheight="32">
+  <image source="tileSets/door_glass.png" width="1216" height="32"/>
  </tileset>
  <layer name="background" width="100" height="100">
   <properties>
@@ -35,14 +38,16 @@
    eJzt2MlKw0Acx/FMom+neBDEowsub+Jyr1arVBHE5eAj9EUUXE4eXM5S1H+IsVkm0zQmndh8C59SyrSZ/n+Z+SdtuY7TAgAAAAAAAAAAABqiXYM5AJgM7Cf/27ZynC0VvD5y0oZ9PvrIc7wnOdadeFT2f3sdhXncTOnzmPXi42XoryJ5PMgHb8U9eRjzmPHy52F7znWm6xfTTlyePGbJozIdqdm7FO5NBa9NY3dlzE4JeSTPi+i+1vQM/QxepQgvP3k8q6Amyypdp9Cc1H0hwf+u+YLrwx+3KU8bijz8DJKychj1/B0lj3V5WiMPY418PXegyjzYr8xWVbE89gvk0USme/GO5r2q1gf/CRQzrIeU0V9MuDePC/crW3lwbx4X1nYlkkvejGzPfdJ8imlvwPPSNf9y472ll/Fd9Ivy9d10Hv0azKsJ9jXvhXn4+9WSiuehG4/qtN3864NsitPdc2T5EGcJHzX4DU3mZ3AeyaMzYqZJ9Pm/5xFFfccrWt9OjjxQTe2zJPcr23NuOtP64LqqXnnATh7sV+Urch2UXBt58uB6qxzRXqDLgfVhTzID9iv7eVyLK0024Zi/3KMj7WBIHpfiwpAHxof+MX6n4lB0Kz4O+9pwfg4nYlEFudieT5Pozs+wd3Rdcx+BHXs1mEPTHddgDsAk478qAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwX3wDbq3Qpw==
   </data>
  </layer>
- <layer name="collision" width="100" height="100" opacity="0.56">
-  <properties>
-   <property name="visible" value="0"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt10EKwjAUQMEsvJX3v5cUN4KWFhLtE2Ygy7TwXwrNGE/32yBEjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo+XaP7fl7i3e/6HHFe//VVXPR4zPfR4seLXq0+L9qMZeW2R6v+539eXq06NGysgfz9GjRo2VFj6N7hbvHeatns9eDc/Ro0aNFjxazatGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aHgAykQmZQ==
-  </data>
- </layer>
+ <objectgroup name="buttons" width="100" height="100">
+  <object gid="1423" x="1248" y="736"/>
+  <object gid="1423" x="1280" y="736"/>
+  <object gid="1423" x="1152" y="992"/>
+  <object gid="1423" x="1152" y="960"/>
+ </objectgroup>
+ <objectgroup name="doors" width="100" height="100">
+  <object gid="1623" x="1152" y="992"/>
+  <object gid="1623" x="1248" y="736"/>
+ </objectgroup>
  <objectgroup name="objects" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
@@ -58,14 +63,14 @@
   <object gid="1222" x="419" y="835"/>
   <object gid="1222" x="450" y="837"/>
   <object type="playerForm" gid="1222" x="595" y="1244"/>
-  <object gid="1508" x="800" y="1056"/>
+  <object gid="1509" x="800" y="1056"/>
  </objectgroup>
- <layer name="ai_paths" width="100" height="100" opacity="0.31">
+ <layer name="ai_paths" width="100" height="100" opacity="0.86">
   <properties>
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2TEKwCAQBMBr8vhEHx0sAmIEu0NkprzytlnYCAAAAAAAAAAAAIB9lOt/uyc3ctTh948sAOAIOtc+xr7V6FwAAAAAAMApvl1qtomQr8/BJgUAAAAAAAAAAAAAAAAAAAAAAACw9gJj7ga+
+   eJzt2kEKwCAMBEAvfXy1j+5BFClC6cVKmHmBREgWkpQAAAAAAAAAACCucvz9AgC+mvXuc3E/v8yP7lmLrDYAEMIOmYtqlj1lLgAAAAAAIIq2l3KPs4fxH+ykAAAAAAAAAAAAAAAAAAAAAAAAAN7dno8H3w==
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
@@ -74,6 +79,15 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt2kENADAIADE+yGeaZ4IESFoFJ+AiAAAAAAAAAAAAAPZ4OV0AAAAAAAAAAAB0KC8QAAAAAAAAAAAAAAAAAAAAAAAAAId9JWIBJg==
+  </data>
+ </layer>
+ <objectgroup name="ai_dynamicActions" width="100" height="100"/>
+ <layer name="collision" width="100" height="100" opacity="0.56">
+  <properties>
+   <property name="visible" value="0"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt10EKwjAUQMEsvJX3v5cUN4KWFhLtE2Ygy7TwXwrNGE/32yBEjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo+XaP7fl7i3e/6HHFe//VVXPR4zPfR4seLXq0+L9qMZeW2R6v+539eXq06NGysgfz9GjRo2VFj6N7hbvHeatns9eDc/Ro0aNFjxazatGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aHgAykQmZQ==
   </data>
  </layer>
 </map>
