@@ -21,12 +21,9 @@ def _keyaxis(game,neg,pos):
 
 class Player(object):
 	def __init__(self, game):
-		self.x = 13
-		self.y = 8
-		self.ux = 0
-		self.uy = 0
-		self.dx = 0
-		self.dy = 0
+		self.x = 13; self.y = 8
+		self.ux = 0; self.uy = 0
+		self.dx = 0; self.dy = 0
 		self.v = 1.7
 
 		self.sprite = pyglet.sprite.Sprite(
