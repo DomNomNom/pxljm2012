@@ -19,7 +19,7 @@ def _keyaxis(game,neg,pos):
 	if game.keys[pos]: val += 1
 	return val
 
-class Player(object):
+class Mover(object):
 	def __init__(self, game):
 		self.x = 13; self.y = 8
 		self.ux = 0; self.uy = 0
@@ -34,9 +34,7 @@ class Player(object):
 			batch=game.objbatch)
 
 	def planmove(self, game):
-		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
-		if self.dx == 0:
-			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+		pass
 
 	def tick(self, game):
 		# completing an existing move
@@ -65,6 +63,13 @@ class Player(object):
 		# todo: set anim frame
 		self.sprite.x = self.x * 32 + self.ux
 		self.sprite.y = -(self.y * 32 + self.uy)
+
+class Player(Mover):
+	# player plans move based on input
+	def planmove(self, game):
+		self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
+		if self.dx == 0:
+			self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 
 class Game(object):
 	def __init__(self):
