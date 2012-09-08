@@ -88,7 +88,7 @@ class PathFollower(Mover):
 
 class Player(Mover):
 	def __init__(self,game,props):
-		super.__init__(game,props)
+		super(Player,self).__init__(game,props)
 		game.player = self
 
 	# player plans move based on input
@@ -154,7 +154,7 @@ class Game(object):
 		self.actions.append(lambda:self.actors.remove(a))
 
 objtypes = {
-		
+		'playerSpawn': Player
 		}
 
 pyglet.resource.path = ['art']
@@ -166,6 +166,6 @@ for obj in game.level.objects:
 	if factory is None:
 		print 'Unknown objecttype %s' % obj['type']
 		continue
-	game.add_actor(factory(obj, game))
+	game.add_actor(factory(game, obj))
 
 pyglet.app.run()
