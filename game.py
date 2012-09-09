@@ -76,16 +76,6 @@ class Mover(object):
         self.sprite.x = self.x * 32 + self.ux
         self.sprite.y = -(self.y * 32 + self.uy)
 
-follow_dirs = [
-        (0,-1),
-        (1,0),
-        (0,1),
-        (-1,0),
-        None,
-        None,
-        None,
-        (0,0)]
-
 class PathFollower(Mover):
     def __init__(self,game,props):
         super(PathFollower,self).__init__(game,props)
@@ -104,6 +94,18 @@ class PathFollower(Mover):
         action = follow_dirs[movecmd - basecmdid]
         if type(action) == tuple:
             self.dx, self.dy = action
+        elif action != None:
+            action(self,game)
+
+follow_dirs = [
+        (0,-1),
+        (1,0),
+        (0,1),
+        (-1,0),
+        None,
+        None,
+        None,
+        (0,0)]
 
 forms = {
         '1': {    # alien
