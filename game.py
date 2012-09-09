@@ -98,7 +98,6 @@ class PathFollower(Mover):
             if type(a) == ConditionalPath and a.x == self.x and a.y == self.y:
                 val = a.active(game)
                 if val:
-                    print 'eval conditionalpath %d %d :%s' % (a.x,a.y,val)
                     return a.gid
         # TODO more stuff here
         return None
@@ -256,16 +255,19 @@ class FloorButton(Mover):
     def __init__(self,game,props):
         self.flag = props['id']
         super(FloorButton,self).__init__(game,props)
-        self.sprite.scale = 0
+        self.sprite.visible = False
     
     def _actor_check(self,a):
+        if a.x != self.x or a.y != self.y:
+            return False
+
         if type(a) in (FloorButton,Door,ConditionalPath):
             return False #LOLOL door on button...
         return True
 
     def tick(self, game):
         game.flags[self.flag] = any(a for a in game.actors \
-            if (self._actor_check(a) and a.x == self.x and a.y == self.y))
+            if self._actor_check(a))
         super(FloorButton,self).tick(game)
 
 class Door(Mover):
@@ -309,10 +311,10 @@ class FormPickup(Mover):
 
 class ConditionalPath(Mover):
     def __init__(self,game,props):
-        self.flags = props['buttons']
+        self.flags = props['buttons'].split(',')
         self.gid = int(props['gid'])
         super(ConditionalPath,self).__init__(game,props)
-     #   self.sprite.visible = False
+        self.sprite.visible = False
 
     def active(self,game):
         return any(game.flags.get(f,False) for f in self.flags)
@@ -384,7 +386,6 @@ class Game(object):
         self.actions = []
         for a in actions: a()
         if self.keys[keys.ESCAPE]:
-            print '%d,%d' % (self.player.x,self.player.y)
             pyglet.app.exit()
 
     def add_actor(self, a):
