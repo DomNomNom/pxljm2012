@@ -229,6 +229,7 @@ class FormPickup(Mover):
                 batch=game.objbatch)
         super(FormPickup,self).__init__(game,props)
         self.form = props['formID']
+        forms[self.form]['gid'] = props['gid']
         self.glow_sprite.x = 32*self.x      # STUPID STUPID HACK
         self.glow_sprite.y = -32*self.y     # Mover's ctor does x,y init
 
