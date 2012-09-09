@@ -92,6 +92,8 @@ class PathFollower(Mover):
         elif action != None:
             action(self,game)
 
+    def _get_dynamic_action(self,game):
+        pass
 
     # ai that follows invisible arrows
     def planmove(self, game):
@@ -109,7 +111,7 @@ class PathFollower(Mover):
         execcmd(self,game,movecmd)
 
         # ai_dynamicActions
-        movecmd = _get_dynamic_action(self,game)
+        movecmd = self._get_dynamic_action(game)
         # TODO make this work
 
 
