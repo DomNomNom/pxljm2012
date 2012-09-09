@@ -120,13 +120,13 @@ forms = {
             },
         '3': {    # red box
             'can_move': False,
-            'gid': 1222,
+            'gid': 1237,
             'can_use': False,
             'trigger_camera': False
             },
         '4': {    # guard
             'can_move': True,
-            'gid': 1222,
+            'gid': 2765,
             'can_use': False,
             'trigger_camera': False
             },
