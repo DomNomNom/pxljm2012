@@ -101,7 +101,9 @@ class PathFollower(Mover):
             self.dy = self.ry
             return
         basecmdid = game.level.sheets['AI']['firstgid']
-        self.dx, self.dy = follow_dirs[movecmd - basecmdid]
+        action = follow_dirs[movecmd - basecmdid]
+        if type(action) == tuple:
+            self.dx, self.dy = action
 
 forms = {
         '1': {    # alien
@@ -115,6 +117,18 @@ forms = {
             'gid': 1222,
             'can_use': False,
             'trigger_camera': False,
+            },
+        '3': {    # red box
+            'can_move': False,
+            'gid': 1222,
+            'can_use': False,
+            'trigger_camera': False
+            },
+        '4': {    # guard
+            'can_move': True,
+            'gid': 1222,
+            'can_use': False,
+            'trigger_camera': False
             },
         }
 
@@ -153,6 +167,8 @@ class Player(Mover):
         # shapeshifting
         if game.keys[keys._1]: self._take_form('1')
         if game.keys[keys._2]: self._take_form('2')
+        if game.keys[keys._3]: self._take_form('3')
+        if game.keys[keys._4]: self._take_form('4')
 
         # camera detection
         self.alarmState = self.trigger_camera and \
