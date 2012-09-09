@@ -83,26 +83,42 @@ class PathFollower(Mover):
 
     # ai that follows invisible arrows
     def planmove(self, game):
+        basecmdid = game.level.sheets['AI']['firstgid']
+
         movecmd = game.level.get('ai_paths',self.x,self.y)
         if movecmd is None or movecmd == 0:
             # no move command in the map here.
             # just continue the direction we were going
             self.dx = self.rx
             self.dy = self.ry
-            return
-        basecmdid = game.level.sheets['AI']['firstgid']
-        action = follow_dirs[movecmd - basecmdid]
-        if type(action) == tuple:
-            self.dx, self.dy = action
-        elif action != None:
-            action(self,game)
+        else:
+            action = follow_dirs[movecmd - basecmdid]
+            if type(action) == tuple:
+                self.dx, self.dy = action
+            elif action != None:
+                action(self,game)
+
+    def pickup(self,game):
+        print 'pickup'
+        for obj in game.actors:
+            if obj.x != self.x or obj.y != self.y:
+                continue
+            if obj == self:
+                continue
+            if type(obj) not in (Mover,Player):     # anything else?
+                continue
+
+            obj.carried_by = self
+            print 'pickup ok'
+            break
+
 
 follow_dirs = [
         (0,-1),
         (1,0),
         (0,1),
         (-1,0),
-        None,
+        PathFollower.pickup,
         None,
         None,
         (0,0)]
