@@ -160,7 +160,6 @@ class Player(Mover):
             return
         self.changing = True
         self.changeTime = 0
-        forms[n]['sprite'].visible = True # TODO
         self.nextFormImage = forms[n]['gid']
         self.can_move = forms[n]['can_move']
         self.form = n
