@@ -303,7 +303,12 @@ class FormPickup(Mover):
 class ConditionalPath(Mover):
     def __init__(self,game,props):
         self.flags = props['buttons']
+        self.gid = int(props['gid'])
         super(ConditionalPath,self).__init__(game,props)
+        self.sprite.visible = False
+
+    def active(self,game):
+        return any(game.flags.get(f,False) for f in self.flags)
 
 class Game(object):
     def __init__(self):
