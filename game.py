@@ -34,34 +34,42 @@ class Mover(object):
             self.x * 32,
             -self.y * 32,
             batch=game.objbatch)
+        self.carried_by = None
 
     def planmove(self, game):
         # default behavior isnt so interesting.
         pass
 
     def tick(self, game):
-        # completing an existing move
-        if self.dx != 0 or self.dy != 0:
-            self.ux += self.dx * self.v;
-            self.uy += self.dy * self.v;
-            
-            if self.ux <= -32 or self.ux >= 32 or self.uy <= -32 or self.uy >= 32:
-                self.x += _sign(self.ux); self.y += _sign(self.uy)
-                self.ux = 0; self.uy = 0
-                self.dx = 0; self.dy = 0
-
-        # starting a new move
-        if self.dx == 0 and self.dy == 0:
-            self.planmove(game)
-
+        if self.carried_by:
+            # slave our position to the thing that is carrying
+            self.x = self.carried_by.x; self.y = self.carried_by.y
+            self.ux = self.carried_by.ux; self.uy = self.carried_by.uy
+            self.dx = 0; self.dy = 0
+            self.rx = 0; self.ry = 0
+        else:
+            # completing an existing move
             if self.dx != 0 or self.dy != 0:
-                self.rx = self.dx
-                self.ry = self.dy
+                self.ux += self.dx * self.v;
+                self.uy += self.dy * self.v;
+                
+                if self.ux <= -32 or self.ux >= 32 or self.uy <= -32 or self.uy >= 32:
+                    self.x += _sign(self.ux); self.y += _sign(self.uy)
+                    self.ux = 0; self.uy = 0
+                    self.dx = 0; self.dy = 0
 
-            # blocked?
-            if game.level.is_blocked(self.x + self.dx, self.y + self.dy):
-                self.dx = 0
-                self.dy = 0
+            # starting a new move
+            if self.dx == 0 and self.dy == 0:
+                self.planmove(game)
+
+                if self.dx != 0 or self.dy != 0:
+                    self.rx = self.dx
+                    self.ry = self.dy
+
+                # blocked?
+                if game.level.is_blocked(self.x + self.dx, self.y + self.dy):
+                    self.dx = 0
+                    self.dy = 0
 
         # update the sprite to the new pos.
         # todo: set anim frame
