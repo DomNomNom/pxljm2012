@@ -111,7 +111,7 @@ class Player(Mover):
         super(Player,self).__init__(game,props)
         game.player = self
         self.form_highlight_sprite = pyglet.sprite.Sprite(
-                game.ui.image_by_id(1),
+                game.ui.image_by_id(5),
                 0, 0,
                 batch = game.uibatch)
         self._take_form('1')
