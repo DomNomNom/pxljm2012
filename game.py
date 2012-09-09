@@ -132,9 +132,14 @@ class Player(Mover):
             self.dx = _keyaxis(game, keys.LEFT, keys.RIGHT)
             if self.dx == 0:
                 self.dy = _keyaxis(game, keys.UP, keys.DOWN)
+
         # shapeshifting
         if game.keys[keys._1]: self._take_form('1')
         if game.keys[keys._2]: self._take_form('2')
+
+        # camera detection
+        if self.trigger_camera and game.level.get('observed',self.x,self.y) != 0:
+            print 'observed by camera at %d,%d' % (self.x,self.y)
 
 class FloorButton(Mover):
     # a 'button' on the floor that is triggered by stepping on it
