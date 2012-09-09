@@ -145,7 +145,7 @@ class Player(Mover):
         self.alarmState = 0
         self.alarmVisible = 0
         self.alarmFlashTime = 0
-        self.alarmFlashPeriod = 20 # in ticks
+        self.alarmFlashPeriod = 10 # in ticks
 
     def _take_form(self, n):
         if not forms[n]['can_use']:
