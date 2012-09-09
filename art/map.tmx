@@ -166,7 +166,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2rEJg0AYhuErgqYK7uNCDuA8LpI+GwQcR8FGOzWc90ueB75efIvzwJQAAAAAAAAAAP5bV6fUzHvNe1elnwZiGart+N3nsR1lne3Q18va1YCyxuf+kd/e96zHNfS4Jz3y+x74DtQjPz3uS49rOM9j0SMW90EAAAAAiMs/crHoAQAAAAAAAAAAAAAAAAAAAAAAAHDcBC/+K2s=
+   eJzt2sEJwjAUBuAcSutJ3MeFHMB5XMS7GwiOY8FDqyJNxRcT+D74zwnvh4RAUgIAAAAAAAAAWnHppvA7hyGl3ZjtmHP/791QyrWbwmen/jlLXs8p59W7+Yyi56OPZd/2cBwe2c+Su5b7HGLcNvkhXu6c9VGGPtqkj3hr3oP6iKePdumjDPd5XfRRF+9BAAAAAKiXP1J10QcAAAAAAAAAAAAAAAAAAAAAAADAenfSwjqW
   </data>
  </layer>
  <objectgroup name="decoration" width="100" height="100">
@@ -297,6 +297,17 @@
    <properties>
     <property name="buttons" value="50"/>
     <property name="spawn" value="box_grey"/>
+   </properties>
+  </object>
+  <object type="playerForm" gid="2765" x="1760" y="704">
+   <properties>
+    <property name="formID" value="4"/>
+   </properties>
+  </object>
+  <object gid="1237" x="1280" y="672"/>
+  <object type="playerForm" gid="1237" x="1280" y="672">
+   <properties>
+    <property name="formID" value="3"/>
    </properties>
   </object>
  </objectgroup>
