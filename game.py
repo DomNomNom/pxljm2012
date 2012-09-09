@@ -353,6 +353,12 @@ class Game(object):
                 0, # y
                 batch=self.uibatch)
             description['sprite'].visible = formID == '1'   # STUPID HACK
+
+        self.backgroundMusic = pyglet.media.Player()
+        #self.backgroundMusic.queue( pyglet.media.load("art/autopilot.wav", streaming=False) )
+        self.backgroundMusic.eos_action = pyglet.media.Player.EOS_LOOP
+        #self.backgroundMusic.play()
+
             
     
     def update(self, dt):
