@@ -115,7 +115,7 @@
     <property name="id" value="32"/>
    </properties>
   </object>
-  <object type="button" gid="1423" x="1536" y="1056">
+  <object type="button" gid="1423" x="1536" y="1024">
    <properties>
     <property name="id" value="40"/>
     <property name="triggeredBy" value="box"/>
@@ -124,12 +124,6 @@
   <object type="button" gid="1423" x="1536" y="704">
    <properties>
     <property name="id" value="60"/>
-    <property name="triggeredBy" value="box_red"/>
-   </properties>
-  </object>
-  <object type="button" gid="1423" x="1536" y="1088">
-   <properties>
-    <property name="id" value="40"/>
     <property name="triggeredBy" value="box_red"/>
    </properties>
   </object>
@@ -318,7 +312,7 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2TsKgDAMANAuHt7P4JGlg6A1oIjUou8thdopkSSQlAAAAAAAAAAAuGvsjndTcBe943lDEec17mX8oxzB38zd/oSWlPU800vf0+ujAJfk/pVrpjpZVzQ3XPkmT2aulpTzVuYfBQAAAAAAvmLdS0U7Eerb5sFOCgAAAAAAAAAAAAAAAAAAAAAAAODcAjBUDzE=
+   eJzt2UsKhDAMAFA3Hn7UxRxZuig4NVQRf0Pf2wildpHSJJCuAwAAAAAAAADgqLFfr03BWrSP8w1FnHPcy/hHdwSt+fa/X3iTMp8naulzPuoowC6pfqWcKU/eq9YjRD3Fnv9acUXPlc+Mzi57iiS/l9bfTS02AAAAAAAA/y7PjqKZCPdb3oOZFAAAAAAAAAAAAAAAAAAAAAAAAMC2GSZrEf8=
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
@@ -340,19 +334,29 @@
     <property name="buttons" value="40"/>
    </properties>
   </object>
-  <object type="triggerable" gid="1419" x="1568" y="800">
+  <object type="contitionalPath" gid="1419" x="1568" y="800">
    <properties>
     <property name="bottons" value="40"/>
    </properties>
   </object>
-  <object type="triggerable" gid="1419" x="1504" y="800">
+  <object type="contitionalPath" gid="1419" x="1504" y="800">
    <properties>
     <property name="buttons" value="40"/>
    </properties>
   </object>
-  <object type="triggerable" gid="1418" x="1536" y="704">
+  <object type="contitionalPath" gid="1418" x="1536" y="704">
    <properties>
     <property name="buttons" value="60"/>
+   </properties>
+  </object>
+  <object type="contitionalPath" gid="1424" x="1376" y="1056">
+   <properties>
+    <property name="buttons" value="40"/>
+   </properties>
+  </object>
+  <object type="contitionalPath" gid="1424" x="1696" y="1056">
+   <properties>
+    <property name="buttons" value="40"/>
    </properties>
   </object>
  </objectgroup>
