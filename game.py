@@ -142,17 +142,16 @@ class Player(Mover):
                 game.ui.image_by_id(5),
                 0, 0,
                 batch = game.uibatch)
-        self._take_form('1')
+        self._take_form('1', game)
         
         self.alarmState = 0
         self.alarmVisible = 0
         self.alarmFlashTime = 0
         self.alarmFlashPeriod = 10 # in ticks
 
-    def _take_form(self, n):
+    def _take_form(self, n, game):
         if not forms[n]['can_use']:
             return
-        forms[n]['sprite'].visible = True # TODO
         self.sprite.image = game.level.image_by_id(forms[n]['gid'])
         self.can_move = forms[n]['can_move']
         self.form = n
@@ -167,10 +166,10 @@ class Player(Mover):
                 self.dy = _keyaxis(game, keys.UP, keys.DOWN)
 
         # shapeshifting
-        if game.keys[keys._1]: self._take_form('1')
-        if game.keys[keys._2]: self._take_form('2')
-        if game.keys[keys._3]: self._take_form('3')
-        if game.keys[keys._4]: self._take_form('4')
+        if game.keys[keys._1]: self._take_form('1', game)
+        if game.keys[keys._2]: self._take_form('2', game)
+        if game.keys[keys._3]: self._take_form('3', game)
+        if game.keys[keys._4]: self._take_form('4', game)
 
         # camera detection
         self.alarmState = self.trigger_camera and \
@@ -229,7 +228,7 @@ class FormPickup(Mover):
                 batch=game.objbatch)
         super(FormPickup,self).__init__(game,props)
         self.form = props['formID']
-        forms[self.form]['gid'] = props['gid']
+        forms[self.form]['gid'] = int(props['gid'])
         self.glow_sprite.x = 32*self.x      # STUPID STUPID HACK
         self.glow_sprite.y = -32*self.y     # Mover's ctor does x,y init
 
@@ -238,7 +237,8 @@ class FormPickup(Mover):
         if game.player.x == self.x and game.player.y == self.y:
             game.remove_actor(self)
             forms[self.form]['can_use'] = True
-            forms[self.form]['sprite'].visible = True
+            if 'sprite' in forms[self.form]:    # not during init
+                forms[self.form]['sprite'].visible = True
             print 'obtained form %s' % self.form
             # todo: some silly effect
             # show this stuff in UI
@@ -261,6 +261,14 @@ class Game(object):
         self.player = None
         self.flags = {}
 
+        for obj in self.level.objects:
+            factory = objtypes.get(obj['type'],None)
+                
+            if factory is None:
+                print 'Unknown objecttype %s' % obj['type']
+                continue
+            self.add_actor(factory(self, obj))
+
         # init the UI sprites
         for formID, description in forms.iteritems():
             description['sprite'] = pyglet.sprite.Sprite(
@@ -268,7 +276,7 @@ class Game(object):
                 (int(formID)-1) * 32, # x
                 0, # y
                 batch=self.uibatch)
-            description['sprite'].visible = False
+            description['sprite'].visible = formID == '1'   # STUPID HACK
             
     
     def update(self, dt):
@@ -324,12 +332,5 @@ pyglet.resource.path = ['art']
 pyglet.resource.reindex()
 game = Game()
 
-for obj in game.level.objects:
-    factory = objtypes.get(obj['type'],None)
-        
-    if factory is None:
-        print 'Unknown objecttype %s' % obj['type']
-        continue
-    game.add_actor(factory(game, obj))
 
 pyglet.app.run()
