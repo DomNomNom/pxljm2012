@@ -22,30 +22,30 @@
   <image source="tileSets/AI.png" width="32" height="288"/>
  </tileset>
  <tileset firstgid="1426" name="myTiles" tilewidth="32" tileheight="32">
-  <image source="tileSets/myTiles.png" width="32" height="160"/>
+  <image source="tileSets/myTiles.png" width="32" height="192"/>
  </tileset>
- <tileset firstgid="1431" name="aibots" tilewidth="32" tileheight="32">
+ <tileset firstgid="1432" name="aibots" tilewidth="32" tileheight="32">
   <image source="tileSets/aibots.png" width="448" height="448"/>
  </tileset>
- <tileset firstgid="1627" name="door_glass" tilewidth="32" tileheight="32">
+ <tileset firstgid="1628" name="door_glass" tilewidth="32" tileheight="32">
   <image source="tileSets/door_glass.png" width="1216" height="32"/>
  </tileset>
- <tileset firstgid="1665" name="guns" tilewidth="32" tileheight="32">
+ <tileset firstgid="1666" name="guns" tilewidth="32" tileheight="32">
   <image source="tileSets/guns.png" width="576" height="544"/>
  </tileset>
- <tileset firstgid="1971" name="monitors" tilewidth="32" tileheight="32">
+ <tileset firstgid="1972" name="monitors" tilewidth="32" tileheight="32">
   <image source="tileSets/monitors.png" width="544" height="544"/>
  </tileset>
- <tileset firstgid="2260" name="structures" tilewidth="32" tileheight="32">
+ <tileset firstgid="2261" name="structures" tilewidth="32" tileheight="32">
   <image source="tileSets/structures.png" width="512" height="512"/>
  </tileset>
- <tileset firstgid="2516" name="objects" tilewidth="32" tileheight="32">
+ <tileset firstgid="2517" name="objects" tilewidth="32" tileheight="32">
   <image source="tileSets/objects.png" width="512" height="480"/>
  </tileset>
- <tileset firstgid="2756" name="janitor" tilewidth="32" tileheight="32">
+ <tileset firstgid="2757" name="janitor" tilewidth="32" tileheight="32">
   <image source="tileSets/janitor.png" width="96" height="96"/>
  </tileset>
- <tileset firstgid="2765" name="people" tilewidth="32" tileheight="32">
+ <tileset firstgid="2766" name="people" tilewidth="32" tileheight="32">
   <image source="tileSets/people.png" width="32" height="32"/>
  </tileset>
  <layer name="background" width="100" height="100">
@@ -53,7 +53,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2tlu00AUxvGxTYL6AvQdeBYQ3IC4QGITtC/CDhcIlRYCKggJsQjxCI14jiKxXJWlcF2iwhzZo46n47GzOI7sv9RfFtdO3PPlzIyjrsVKrQEAAAAAAAAAgIX1T+slYUnS/Hl2xUi7Fyl1o8DdKN2n6fPsCqn1LV3zBwVuevLYWIDzbqtJ8kD9edzXrnvcLsljGDPnlBlnPDF5SB+c1jU863EmUFs5/o8+9rvlt7ZfkBNrhup5nNQ1eaqUWllS6kJmdSndbvZ3+0Ge/9TH9tSBH/q5/in0Td98snx1evB4h7Ox8/hwJM3DZech+/dV3rh5fNE325bPLZ+jfNcUReOBnceJCv1h8jB9UtQfcg7ynnYOoWuduEU94c4XUjO7PqLo8+cbr6r0h9x/zJ778hhlv7PzaHMPhMjfPVDpPCtzqzwuml/lc3knW0dJ3e3eCPWHnceuPnbH8os8vHnsZrWRxzvZmH4pMLafqrC+cvMI5Uwe+TxcoTk2UofnaWPkvLadRwh5pFRgjW9qsxWn7G1mvo2StOZ/Y/KYVX+895DtV6J8Hltxvl5uX5j79RnlMaz4NxxLUk3Xcly+a/FQHqY2+5483LkgzvrE3u7bVmTo5BE6xl6PmyxsTde5jv443y+fQyaxqm9WAuuEh73wtbpcn+95slhuSSZVxqtZuqZvrk74unKtLtfny8kBX3+0NQ9Th8tW/erIyEfWC0cTvyjJ90dbekMUjdP9wHrLXWPVoV/A/a6kLX0xSR+5eXR1TTpv655tJg8Zry5G+Tx8+6M+G3H1/iCbyQ3G2FfWmC8de1O+P6YjGbyy8hiMmamL/z2ZPg8b9Z0vu76DCnmgntoXccerps+560L9wbpqsfJAM3kwXs3eJOsgtzeq5MF6azbsucCXA/3RHDcDxqvm83invfVkY/aZ5hodhz0uyeON9jqQB+aH+WP+XmhPtM2a34dxrZzk8Fw7F6W5mO3PSo5jLTs93+fTzB2bcXgeQTMeLcA5dF3Z2GTje0Mgr0pPML+jzfh8AwAAAAAAAAAAAAAAAAAAAAAAAAAAAEC7/Ad3ZGXj
+   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
   </data>
  </layer>
  <layer name="observed" width="100" height="100">
@@ -140,22 +140,22 @@
   </object>
  </objectgroup>
  <objectgroup name="doors" width="100" height="100" visible="0">
-  <object type="door" gid="1627" x="1152" y="992">
+  <object type="door" gid="1628" x="1152" y="992">
    <properties>
     <property name="buttons" value="00,01"/>
    </properties>
   </object>
-  <object type="door" gid="1627" x="1248" y="736">
+  <object type="door" gid="1628" x="1248" y="736">
    <properties>
     <property name="buttons" value="10,11"/>
    </properties>
   </object>
-  <object type="door" gid="1627" x="832" y="896">
+  <object type="door" gid="1628" x="832" y="896">
    <properties>
     <property name="buttons" value="20,21,22"/>
    </properties>
   </object>
-  <object name="door3" type="door" gid="1627" x="992" y="992">
+  <object name="door3" type="door" gid="1628" x="992" y="992">
    <properties>
     <property name="buttons" value="30,31,32"/>
    </properties>
@@ -166,14 +166,14 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2sEJwjAYBtAcSutJ3MeFHMB5XMS7GwiO04KHVkWSqokJvAffOeX/IGkgIQAAAAAAAAAArbh0c/idwxDCbsp2yrn/99dQyrWbw3un/jExz/uU/erVcka556OPuE97OA737BdJXct5DnncNukhv9Q566MMfbRJH/mtuQ/qI+7bf1x9tEsfZTjP66KPurgPAgAAAEC9vJGqiz4AAAAAAAAAAAAAAAAAAAAAAAAA1hsBids8Kg==
+   eJzt2sEJwjAYBtAcSutN3MeFHMB5XMSzG3hwmxY8tCqSVE1M4D34zin/B0kDCQEAAAAAAAAAaMWlm8PvHIYQdlO2U879v7+GUq7dHN479Y+Jed6n7FevljPKPR99xH3aw3G4Z79I6lrOc8jjtkkP+aXOWR9l6KNN+shvzX1QH3Hf/uPqo136KMN5Xhd91MV9EAAAAADq5Y1UXfQBAAAAAAAAAAAAAAAAAAAAAAAAsN4Is9M8WQ==
   </data>
  </layer>
  <objectgroup name="decoration" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
   </properties>
-  <object name="playerSpawn" type="playerSpawn" gid="1160" x="512" y="1568"/>
+  <object name="playerSpawn" type="playerSpawn" gid="1160" x="448" y="1728"/>
   <object gid="1222" x="672" y="1600"/>
   <object gid="1222" x="672" y="1600"/>
   <object gid="1222" x="423" y="807"/>
@@ -187,75 +187,75 @@
     <property name="formID" value="2"/>
    </properties>
   </object>
-  <object type="aiSpawn" gid="1513" x="800" y="1056"/>
-  <object type="aiSpawn" gid="1547" x="736" y="1152"/>
-  <object type="aiSpawn" gid="1547" x="832" y="1152"/>
-  <object gid="2037" x="736" y="1216"/>
-  <object gid="2037" x="768" y="960"/>
-  <object gid="2038" x="832" y="1216"/>
-  <object gid="2038" x="800" y="768"/>
-  <object gid="2037" x="768" y="768"/>
-  <object gid="2036" x="1696" y="1056"/>
-  <object gid="2037" x="1504" y="896"/>
-  <object gid="2429" x="928" y="640"/>
-  <object gid="2427" x="928" y="608"/>
-  <object gid="2428" x="928" y="576"/>
-  <object gid="2504" x="992" y="640"/>
-  <object gid="2709" x="960" y="608"/>
-  <object gid="2588" x="864" y="960"/>
-  <object gid="2759" x="896" y="960"/>
-  <object gid="2760" x="903" y="962"/>
-  <object gid="2758" x="937" y="956"/>
-  <object gid="2756" x="933" y="964"/>
-  <object gid="2038" x="640" y="992"/>
-  <object type="aiSpawn" gid="1513" x="1504" y="736"/>
-  <object type="aiSpawn" gid="1513" x="1312" y="1024"/>
-  <object gid="2047" x="928" y="1024"/>
-  <object gid="2518" x="480" y="1024"/>
-  <object gid="2516" x="576" y="992"/>
-  <object gid="2661" x="512" y="992">
+  <object type="aiSpawn" gid="1514" x="800" y="1056"/>
+  <object type="aiSpawn" gid="1548" x="736" y="1152"/>
+  <object type="aiSpawn" gid="1548" x="832" y="1152"/>
+  <object gid="2038" x="736" y="1216"/>
+  <object gid="2038" x="768" y="960"/>
+  <object gid="2039" x="832" y="1216"/>
+  <object gid="2039" x="800" y="768"/>
+  <object gid="2038" x="768" y="768"/>
+  <object gid="2037" x="1696" y="1056"/>
+  <object gid="2038" x="1504" y="896"/>
+  <object gid="2430" x="928" y="640"/>
+  <object gid="2428" x="928" y="608"/>
+  <object gid="2429" x="928" y="576"/>
+  <object gid="2505" x="992" y="640"/>
+  <object gid="2710" x="960" y="608"/>
+  <object gid="2589" x="864" y="960"/>
+  <object gid="2760" x="896" y="960"/>
+  <object gid="2761" x="903" y="962"/>
+  <object gid="2759" x="937" y="956"/>
+  <object gid="2757" x="933" y="964"/>
+  <object gid="2039" x="640" y="992"/>
+  <object type="aiSpawn" gid="1514" x="1504" y="736"/>
+  <object type="aiSpawn" gid="1514" x="1312" y="1024"/>
+  <object gid="2048" x="928" y="1024"/>
+  <object gid="2519" x="480" y="1024"/>
+  <object gid="2517" x="576" y="992"/>
+  <object gid="2662" x="512" y="992">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="512" y="1024">
+  <object gid="2662" x="512" y="1024">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="480" y="1056">
+  <object gid="2662" x="480" y="1056">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="448" y="992">
+  <object gid="2662" x="448" y="992">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="448" y="1024">
+  <object gid="2662" x="448" y="1024">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="448" y="1056">
+  <object gid="2662" x="448" y="1056">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="512" y="1056">
+  <object gid="2662" x="512" y="1056">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="2661" x="480" y="992">
+  <object gid="2662" x="480" y="992">
    <properties>
     <property name="animationLength" value="6"/>
     <property name="animationPeriod" value="5"/>
@@ -291,7 +291,7 @@
   <object gid="814" x="2016" y="960"/>
   <object gid="814" x="2048" y="960"/>
   <object gid="814" x="2080" y="992"/>
-  <object gid="2038" x="800" y="768"/>
+  <object gid="2039" x="800" y="768"/>
   <object gid="1222" x="672" y="1632"/>
   <object type="triggerable" gid="1425" x="704" y="1632">
    <properties>
@@ -299,13 +299,13 @@
     <property name="spawn" value="box_grey"/>
    </properties>
   </object>
-  <object type="playerForm" gid="2765" x="1760" y="704">
+  <object type="playerForm" gid="2766" x="1760" y="704">
    <properties>
     <property name="formID" value="4"/>
    </properties>
   </object>
-  <object gid="2047" x="1568" y="704"/>
-  <object gid="2047" x="1504" y="704"/>
+  <object gid="2048" x="1568" y="704"/>
+  <object gid="2048" x="1504" y="704"/>
   <object gid="1237" x="1280" y="672"/>
   <object type="playerForm" gid="1237" x="1280" y="672">
    <properties>
