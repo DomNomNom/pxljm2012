@@ -45,6 +45,9 @@
  <tileset firstgid="2756" name="janitor" tilewidth="32" tileheight="32">
   <image source="tileSets/janitor.png" width="96" height="96"/>
  </tileset>
+ <tileset firstgid="2765" name="people" tilewidth="32" tileheight="32">
+  <image source="tileSets/people.png" width="32" height="32"/>
+ </tileset>
  <layer name="background" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
@@ -58,7 +61,7 @@
    <property name="visible" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1LEKgCAARVGX/n/qfxtCiNChQH3ROdAcvKuWAgAAAAAAAAAA6+zb+ZFBjyx6/I/eOdy/HLWFHs+M3EuPvtYuM/bSo621vfO7Tm/3e5MZ71f9h7PQdt1n9J2Z+a8vu+5jJ3APknibsuiRRY88WgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8MYBjDokGQ==
+   eJzt1TEKwCAQBECb/L/Kfy2CYKEhCUS3mAFrYVfvSgEAAAAAAAAAgH3O4zpk0Afs5f/lMA9ztC708c6feeljbpTLirz0MTbLXl57PM19xfxqd3gL91bs4L4L+2Wuz0dO4B8kMZuy6COLPvLoAgAAAAAAAAAAAAAAAAAAAAAAAAAAAACALyqSSSB9
   </data>
  </layer>
  <objectgroup name="buttons" width="100" height="100">
@@ -158,6 +161,14 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="decoration" width="100" height="100">
+  <properties>
+   <property name="visible" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2rEJg0AYhuErgqYK7uNCDuA8LpI+GwQcR8FGOzWc90ueB75efIvzwJQAAAAAAAAAAP5bV6fUzHvNe1elnwZiGart+N3nsR1lne3Q18va1YCyxuf+kd/e96zHNfS4Jz3y+x74DtQjPz3uS49rOM9j0SMW90EAAAAAiMs/crHoAQAAAAAAAAAAAAAAAAAAAAAAAHDcBC/+K2s=
+  </data>
+ </layer>
  <objectgroup name="decoration" width="100" height="100">
   <properties>
    <property name="visible" value="1"/>
@@ -179,56 +190,11 @@
   <object type="aiSpawn" gid="1513" x="800" y="1056"/>
   <object type="aiSpawn" gid="1547" x="736" y="1152"/>
   <object type="aiSpawn" gid="1547" x="832" y="1152"/>
-  <object gid="1806" x="960" y="704"/>
-  <object gid="1907" x="864" y="832"/>
-  <object gid="1907" x="896" y="832"/>
-  <object gid="1692" x="992" y="768"/>
-  <object gid="1692" x="960" y="768"/>
-  <object gid="1692" x="928" y="768"/>
-  <object gid="1692" x="896" y="768"/>
-  <object gid="1723" x="992" y="704"/>
-  <object gid="1814" x="928" y="704"/>
-  <object gid="1896" x="896" y="704"/>
   <object gid="2037" x="736" y="1216"/>
   <object gid="2037" x="768" y="960"/>
   <object gid="2038" x="832" y="1216"/>
   <object gid="2038" x="800" y="768"/>
   <object gid="2037" x="768" y="768"/>
-  <object gid="2264" x="1824" y="1120"/>
-  <object gid="2264" x="1824" y="1152"/>
-  <object gid="2264" x="1824" y="1184"/>
-  <object gid="2264" x="1856" y="1184"/>
-  <object gid="2264" x="1888" y="1184"/>
-  <object gid="2264" x="1920" y="1184"/>
-  <object gid="2264" x="2048" y="1184"/>
-  <object gid="2264" x="2016" y="1184"/>
-  <object gid="2264" x="1984" y="1184"/>
-  <object gid="2264" x="1952" y="1184"/>
-  <object gid="2264" x="2080" y="1184"/>
-  <object gid="2264" x="2112" y="1184"/>
-  <object gid="2264" x="2144" y="1184"/>
-  <object gid="2264" x="2144" y="1152"/>
-  <object gid="2264" x="2144" y="1120"/>
-  <object gid="2264" x="2144" y="1088"/>
-  <object gid="2264" x="2144" y="1056"/>
-  <object gid="2264" x="2144" y="1024"/>
-  <object gid="2264" x="2144" y="992"/>
-  <object gid="2264" x="2144" y="960"/>
-  <object gid="2264" x="2144" y="928"/>
-  <object gid="2264" x="2144" y="896"/>
-  <object gid="2264" x="2112" y="896"/>
-  <object gid="2264" x="2080" y="896"/>
-  <object gid="2264" x="2048" y="896"/>
-  <object gid="2264" x="2016" y="896"/>
-  <object gid="2264" x="1984" y="896"/>
-  <object gid="2264" x="1952" y="896"/>
-  <object gid="2264" x="1920" y="896"/>
-  <object gid="2264" x="1888" y="896"/>
-  <object gid="2264" x="1856" y="896"/>
-  <object gid="2264" x="1824" y="896"/>
-  <object gid="2264" x="1824" y="928"/>
-  <object gid="2264" x="1824" y="960"/>
-  <object gid="2035" x="1792" y="1024"/>
   <object gid="2036" x="1696" y="1056"/>
   <object gid="2037" x="1504" y="896"/>
   <object gid="2429" x="928" y="640"/>
@@ -295,11 +261,6 @@
     <property name="animationPeriod" value="5"/>
    </properties>
   </object>
-  <object gid="1851" x="928" y="832"/>
-  <object gid="1851" x="960" y="832"/>
-  <object gid="1851" x="992" y="832"/>
-  <object gid="1237" x="1794" y="1052"/>
-  <object gid="1237" x="1788" y="1060"/>
   <object gid="812" x="1856" y="1024"/>
   <object gid="812" x="1888" y="992"/>
   <object gid="812" x="1920" y="960"/>
@@ -382,7 +343,7 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt12GOgjAUAGF+eCvvfy9jjIlBCq+vBaYwk5jssgW7/ZbiTtOn52MyUHqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WO3h8b5m5GX/7eVxxvteIT1Y6cGK6HHnZ87eHpm1Lf1Mj/Zrfr9e87jjfVDqKI/MmDsWXYuaPSdzf8zHrM0hO68RqvGInpu9P7IeV6rVY+vvMzpmPrY0Bz3qxi2dl/GIfi7To//7/nrUziP7fwz1edP6PC/tTaVjS2u/p0ekUT22jq/tRfPve3pE5lZzzTM7wmPpfoociz4/Wvehq3rQ0mPMSL/D6B533q+ynx1rzu396rkGR9R7LiWPM9KD59HzPjqiK3uMmB6sXCtWerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YPQCHmFh8w==
+   eJzt11GOwiAYAOE+eCvvfy9jjImp0P5QSgc6k5jN1laRb6Husnx6PhYDpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKD1Rke79eMPOy/szyueN8Z6unxe1yPdL09vs/pkY64Pu58zznbo2ZuI56z1sPj+zPnccd1kKuXR805dyw6FyV7Ts36WJ+zNYbacY1QiUf02tr1UesxU0c99v4+o+esz82NQY+y81LX1XhEv5fp0f59S/5HLPGI+pJMj97Pc3tT7lhq7s/0iDSqx97xrb1o/XtLj8jYSl7zynp4pNZT5Fj0/nF0H5rVg5YeY0b6DKN73Hm/qv3uWHJt60fLOehR67HkPK5ID55Hy3XUo5k9RkwPVs4VKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WejB6AdH4Yu8=
   </data>
  </layer>
  <layer name="alarm" width="100" height="100" visible="0">
@@ -391,6 +352,11 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJztwzEJAAAMA7A+8/9Vb2E6Ekgvqaqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq+gfph6gK
+  </data>
+ </layer>
+ <layer name="Tile Layer 8" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
   </data>
  </layer>
 </map>
