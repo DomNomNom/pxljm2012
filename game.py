@@ -137,7 +137,7 @@ follow_dirs = [
         (0,1),
         (-1,0),
         PathFollower.pickup,
-        None,
+        PathFollower.dropoff,
         None,
         (0,0)]
 
