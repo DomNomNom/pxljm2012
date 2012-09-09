@@ -142,6 +142,7 @@ class Player(Mover):
                 game.ui.image_by_id(5),
                 0, 0,
                 batch = game.uibatch)
+        self.form = -1
         self._take_form('1', game)
         
         self.alarmState = 0
@@ -153,10 +154,10 @@ class Player(Mover):
         self.changeTime = 0
         self.changing = True
         self.changeaAnimationMin = 6
-        self.changeaAnimationFrames = 4
+        self.changeaAnimationFrames = 3
 
     def _take_form(self, n, game):
-        if not forms[n]['can_use']:
+        if n==self.form or not forms[n]['can_use']:
             return
         self.changing = True
         self.changeTime = 0
@@ -202,8 +203,8 @@ class Player(Mover):
                 self.sprite.image = game.level.image_by_id(self.nextFormImage)
             else:
                 self.sprite.image
-                frame = self.changeaAnimationMin + ratio*self.changeaAnimationFrames
-                self.sprite.image = game.level.image_by_id(forms['3']['gid'])
+                gid = game.level.sheets['alien']['firstgid'] + self.changeaAnimationMin + int(ratio*self.changeaAnimationFrames)
+                self.sprite.image = game.level.image_by_id(gid)
 
 
 class FloorButton(Mover):
