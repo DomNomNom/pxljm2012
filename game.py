@@ -85,6 +85,7 @@ class PathFollower(Mover):
     def planmove(self, game):
         basecmdid = game.level.sheets['AI']['firstgid']
 
+        # paths layer
         movecmd = game.level.get('ai_paths',self.x,self.y)
         if movecmd is None or movecmd == 0:
             # no move command in the map here.
@@ -98,8 +99,21 @@ class PathFollower(Mover):
             elif action != None:
                 action(self,game)
 
+        # actions layer AHCK AHCK AHCK
+        movecmd = game.level.get('ai_actions',self.x,self.y)
+        if movecmd is None or movecmd == 0:
+            # nothing to see here.
+            # dont clobber a lower layer of behavior.
+            pass
+        else:
+            action = follow_dirs[movecmd - basecmdid]
+            if type(action) == tuple:
+                self.dx, self.dy = action
+            elif action != None:
+                action(self,game)
+
+
     def pickup(self,game):
-        print 'pickup'
         for obj in game.actors:
             if obj.x != self.x or obj.y != self.y:
                 continue
@@ -109,8 +123,12 @@ class PathFollower(Mover):
                 continue
 
             obj.carried_by = self
-            print 'pickup ok'
             break
+
+    def dropoff(self,game):
+        for obj in game.actors:
+            if obj.carried_by == self:
+                obj.carried_by = None
 
 
 follow_dirs = [
