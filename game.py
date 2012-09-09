@@ -94,7 +94,14 @@ class PathFollower(Mover):
         return True
 
     def _get_dynamic_action(self,game):
-        pass
+        for a in game.actors:
+            if type(a) == ConditionalPath and a.x == self.x and a.y == self.y:
+                val = a.active(game)
+                print 'eval conditionalpath %d %d :%s' % (a.x,a.y,val)
+                if val:
+                    return a.gid
+        # TODO more stuff here
+        return None
 
     # ai that follows invisible arrows
     def planmove(self, game):
@@ -113,7 +120,7 @@ class PathFollower(Mover):
 
         # ai_dynamicActions
         movecmd = self._get_dynamic_action(game)
-        # TODO make this work
+        self.execcmd(game,movecmd)
 
 
     def pickup(self,game):
@@ -305,7 +312,7 @@ class ConditionalPath(Mover):
         self.flags = props['buttons']
         self.gid = int(props['gid'])
         super(ConditionalPath,self).__init__(game,props)
-        self.sprite.visible = False
+     #   self.sprite.visible = False
 
     def active(self,game):
         return any(game.flags.get(f,False) for f in self.flags)
