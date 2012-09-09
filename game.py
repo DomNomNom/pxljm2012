@@ -81,36 +81,36 @@ class PathFollower(Mover):
         super(PathFollower,self).__init__(game,props)
         print 'PathFollower %s' % props
 
+    def execcmd(self,game,act):
+        if movecmd is None or movecmd == 0:
+            return False
+
+        basecmdid = game.level.sheets['AI']['firstgid']
+        action = follow_dirs[movecmd - basecmdid]
+        if type(action) == tuple:
+            self.dx, self.dy = action
+        elif action != None:
+            action(self,game)
+
+
     # ai that follows invisible arrows
     def planmove(self, game):
-        basecmdid = game.level.sheets['AI']['firstgid']
 
         # paths layer
         movecmd = game.level.get('ai_paths',self.x,self.y)
-        if movecmd is None or movecmd == 0:
+        if not execcmd(self,game,movecmd):
             # no move command in the map here.
             # just continue the direction we were going
             self.dx = self.rx
             self.dy = self.ry
-        else:
-            action = follow_dirs[movecmd - basecmdid]
-            if type(action) == tuple:
-                self.dx, self.dy = action
-            elif action != None:
-                action(self,game)
 
         # actions layer AHCK AHCK AHCK
         movecmd = game.level.get('ai_actions',self.x,self.y)
-        if movecmd is None or movecmd == 0:
-            # nothing to see here.
-            # dont clobber a lower layer of behavior.
-            pass
-        else:
-            action = follow_dirs[movecmd - basecmdid]
-            if type(action) == tuple:
-                self.dx, self.dy = action
-            elif action != None:
-                action(self,game)
+        execcmd(self,game,movecmd)
+
+        # ai_dynamicActions
+        movecmd = _get_dynamic_action(self,game)
+        # TODO make this work
 
 
     def pickup(self,game):
