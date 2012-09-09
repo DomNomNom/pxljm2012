@@ -128,7 +128,8 @@ class Player(Mover):
                 batch = game.uibatch)
         self._take_form('1')
         
-        self.alarmState = '0'
+        self.alarmState = 0
+        self.alarmVisible = 0
         self.alarmFlashTime = 0
         self.alarmFlashPeriod = 20 # in ticks
 
@@ -154,15 +155,20 @@ class Player(Mover):
         if game.keys[keys._2]: self._take_form('2')
 
         # camera detection
-        if self.trigger_camera and game.level.get('observed',self.x,self.y) != 0:
-            #print 'observed by camera at %d,%d' % (self.x,self.y)
+        self.alarmState = self.trigger_camera and \
+            game.level.get('observed',self.x,self.y) != 0
+
+    def tick(self, game):
+        super(Player,self).tick(game)
+        if self.alarmState:
             self.alarmFlashTime += 1
             while self.alarmFlashTime > self.alarmFlashPeriod:
                 self.alarmFlashTime -= self.alarmFlashPeriod
-                self.alarmState = str((int(self.alarmState)+1) % 2) # toggle the alarmState (to flash it)
+                self.alarmVisible = (self.alarmVisible+1) % 2
         else:
-            self.alarmState = '0'
-        game.level.layers['alarm']['props']['visible'] = self.alarmState # hide the alarm layer
+            self.alarmVisible = 0
+        game.level.layers['alarm']['props']['visible'] = str(self.alarmVisible) # hide the alarm layer
+
 
 class FloorButton(Mover):
     # a 'button' on the floor that is triggered by stepping on it
