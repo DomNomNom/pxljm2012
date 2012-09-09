@@ -96,11 +96,13 @@ forms = {
             'can_move': True,
             'gid': 1160,
             'can_use': True,
+            'trigger_camera': True,
              },
         '2': {    # box
             'can_move': False,
             'gid': 1222,
             'can_use': False,
+            'trigger_camera': False,
             },
         }
 
@@ -122,6 +124,7 @@ class Player(Mover):
         self.can_move = forms[n]['can_move']
         self.form = n
         self.form_highlight_sprite.x = (int(n)-1) * 32
+        self.trigger_camera = forms[n]['trigger_camera']
 
     # player plans move based on input
     def planmove(self, game):
