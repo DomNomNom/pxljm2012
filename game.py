@@ -224,8 +224,13 @@ class Door(Mover):
 
 class FormPickup(Mover):
     def __init__(self,game,props):
+        self.glow_sprite = pyglet.sprite.Sprite(
+                game.level.image_by_id(1431), 0,0,
+                batch=game.objbatch)
         super(FormPickup,self).__init__(game,props)
         self.form = props['formID']
+        self.glow_sprite.x = 32*self.x      # STUPID STUPID HACK
+        self.glow_sprite.y = -32*self.y     # Mover's ctor does x,y init
 
     def tick(self,game):
         super(FormPickup,self).tick(game)
