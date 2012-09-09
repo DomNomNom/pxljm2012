@@ -69,10 +69,14 @@ class Mover(object):
         self.sprite.y = -(self.y * 32 + self.uy)
 
 follow_dirs = [
+        (0,-1),
+        (1,0),
         (0,1),
         (-1,0),
-        (1,0),
-        (0,-1)]
+        None,
+        None,
+        None,
+        (0,0)]
 
 class PathFollower(Mover):
     def __init__(self,game,props):
