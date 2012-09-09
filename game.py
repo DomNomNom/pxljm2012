@@ -104,7 +104,7 @@ class PathFollower(Mover):
             self.dx = self.rx
             self.dy = self.ry
 
-        # actions layer AHCK AHCK AHCK
+        # actions layer
         movecmd = game.level.get('ai_actions',self.x,self.y)
         execcmd(self,game,movecmd)
 
