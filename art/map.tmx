@@ -121,8 +121,9 @@
     <property name="triggeredBy" value="box"/>
    </properties>
   </object>
-  <object gid="1423" x="1536" y="704">
+  <object type="button" gid="1423" x="1536" y="704">
    <properties>
+    <property name="id" value="60"/>
     <property name="triggeredBy" value="box_red"/>
    </properties>
   </object>
@@ -317,7 +318,7 @@
    <property name="visible" value="0"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2c0KgCAMAGAvPXw/hx45PAhlgyRCJL7vIqinTdxgKQEAAAAAAAAA8NY63feWYC+6x/fq2Je41/Hf5APSPl1XGIlaOpZZHQVokutX/jP9k31FfUPLmTzpuUZS91uZNwoAAAAAAPxFmUtFMxH6O+fBTAoAAAAAAAAAAAAAAAAAAAAAAADg2QE65Q8v
+   eJzt2TsKgDAMANAuHt7P4JGlg6A1oIjUou8thdopkSSQlAAAAAAAAAAAuGvsjndTcBe943lDEec17mX8oxzB38zd/oSWlPU800vf0+ujAJfk/pVrpjpZVzQ3XPkmT2aulpTzVuYfBQAAAAAAvmLdS0U7Eerb5sFOCgAAAAAAAAAAAAAAAAAAAAAAAODcAjBUDzE=
   </data>
  </layer>
  <layer name="ai_actions" width="100" height="100">
@@ -349,8 +350,13 @@
     <property name="buttons" value="40"/>
    </properties>
   </object>
+  <object type="triggerable" gid="1418" x="1536" y="704">
+   <properties>
+    <property name="buttons" value="60"/>
+   </properties>
+  </object>
  </objectgroup>
- <layer name="collision" width="100" height="100" opacity="0.67">
+ <layer name="collision" width="100" height="100" visible="0" opacity="0.67">
   <properties>
    <property name="visible" value="0"/>
   </properties>
@@ -358,7 +364,7 @@
    eJzt2u1qwjAYQOH+2F3t/u9rjCFIl5jPpidvzwEZq7XGPDZ1w+P46/vrMFB6sNKDlR6s9GD167HzLVoRX9PO6cFKD1Z6sNKDlR6s9GClBys9WF3h8dS/rWd0lccdzxuhlR7v2/VIt9rjdZ8e6Yjnx5OvOVd79Mxt6fyK/P/4FR6vn7m5umoe9fh/zDuv7ZE9WtaDnvPjvM+nMdSMK/p6ldpv5L0/0yNSox6l92XtPud9c2PQo22/1ON6PGrXID3mP++7R+s4Sp+bd/tcPHo9z61NuW2pub/So6ZdPUrbP61F599netSMreWYd7bCI3U+1WyrvX6MrkNRPWjpsWek17C7xxPWq9b1vDQHvceZceudg7sqXR9Hj5fbtqIIHrX3tTzmTo+Z59GKInvsmB6sZnvYWHqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerHJzTvsezFPa3YP4HaqRSuvVDrfSWHdqt/FGTw9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YKUHKz1Y6cFKD1Z6sNKDlR6s9GClBys9WOnBSg9WerDSg5UerPRgpQcrPVjpwUoPVnqw0oOVHqz0YPQDyQiH2Q==
   </data>
  </layer>
- <layer name="alarm" width="100" height="100">
+ <layer name="alarm" width="100" height="100" visible="0">
   <data encoding="base64" compression="zlib">
    eJzt1TEOwyAQRUE3uX+X86ZIkRTYBLLYX9aMRGeafWC2DQAAAAAAgBHPx/HiXHpk0SOLHln+nbuGtb5nODPb3v36ZfEx2qNi/nrsm+nR2t/aY+ZvI+dPj/X0yLLyHz76rR5r31o96rRmczQvPWrsnXM9rqFHlsr344x1d737kbbuLrEHfWaWRY8semTRI4seebQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGDGC/YL32w=
   </data>

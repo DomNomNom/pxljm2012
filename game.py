@@ -148,11 +148,20 @@ class Player(Mover):
         self.alarmVisible = 0
         self.alarmFlashTime = 0
         self.alarmFlashPeriod = 10 # in ticks
+        
+        self.changeLength = 20
+        self.changeTime = 0
+        self.changing = True
+        self.changeaAnimationMin = 6
+        self.changeaAnimationFrames = 4
 
     def _take_form(self, n, game):
         if not forms[n]['can_use']:
             return
-        self.sprite.image = game.level.image_by_id(forms[n]['gid'])
+        self.changing = True
+        self.changeTime = 0
+        forms[n]['sprite'].visible = True # TODO
+        self.nextFormImage = forms[n]['gid']
         self.can_move = forms[n]['can_move']
         self.form = n
         self.form_highlight_sprite.x = (int(n)-1) * 32
@@ -185,6 +194,17 @@ class Player(Mover):
         else:
             self.alarmVisible = 0
         game.level.layers['alarm']['props']['visible'] = str(self.alarmVisible) # hide the alarm layer
+        
+        if self.changing:
+            self.changeTime += 1
+            ratio = self.changeTime / float(self.changeLength)
+            if ratio > 1:
+                changing = False
+                self.sprite.image = game.level.image_by_id(self.nextFormImage)
+            else:
+                self.sprite.image
+                frame = self.changeaAnimationMin + ratio*self.changeaAnimationFrames
+                self.sprite.image = game.level.image_by_id(forms['3']['gid'])
 
 
 class FloorButton(Mover):
