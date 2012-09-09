@@ -97,8 +97,8 @@ class PathFollower(Mover):
         for a in game.actors:
             if type(a) == ConditionalPath and a.x == self.x and a.y == self.y:
                 val = a.active(game)
-                print 'eval conditionalpath %d %d :%s' % (a.x,a.y,val)
                 if val:
+                    print 'eval conditionalpath %d %d :%s' % (a.x,a.y,val)
                     return a.gid
         # TODO more stuff here
         return None
@@ -259,7 +259,7 @@ class FloorButton(Mover):
         self.sprite.scale = 0
     
     def _actor_check(self,a):
-        if type(a) in (FloorButton,Door):
+        if type(a) in (FloorButton,Door,ConditionalPath):
             return False #LOLOL door on button...
         return True
 
