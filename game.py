@@ -81,7 +81,7 @@ class PathFollower(Mover):
         super(PathFollower,self).__init__(game,props)
         print 'PathFollower %s' % props
 
-    def execcmd(self,game,act):
+    def execcmd(self,game,movecmd):
         if movecmd is None or movecmd == 0:
             return False
 
@@ -91,6 +91,7 @@ class PathFollower(Mover):
             self.dx, self.dy = action
         elif action != None:
             action(self,game)
+        return True
 
     def _get_dynamic_action(self,game):
         pass
@@ -100,7 +101,7 @@ class PathFollower(Mover):
 
         # paths layer
         movecmd = game.level.get('ai_paths',self.x,self.y)
-        if not execcmd(self,game,movecmd):
+        if not self.execcmd(game,movecmd):
             # no move command in the map here.
             # just continue the direction we were going
             self.dx = self.rx
@@ -108,7 +109,7 @@ class PathFollower(Mover):
 
         # actions layer
         movecmd = game.level.get('ai_actions',self.x,self.y)
-        execcmd(self,game,movecmd)
+        self.execcmd(game,movecmd)
 
         # ai_dynamicActions
         movecmd = self._get_dynamic_action(game)
@@ -299,6 +300,11 @@ class FormPickup(Mover):
             # todo: some silly effect
             # show this stuff in UI
 
+class ConditionalPath(Mover):
+    def __init__(self,game,props):
+        self.flags = props['buttons']
+        super(ConditionalPath,self).__init__(game,props)
+
 class Game(object):
     def __init__(self):
         self.win = pyglet.window.Window(resizable=True, fullscreen=False)
@@ -382,6 +388,7 @@ objtypes = {
         'button': FloorButton,
         'door': Door,
         'playerForm': FormPickup,
+        'contitionalPath': ConditionalPath,
         }
 
 pyglet.resource.path = ['art']

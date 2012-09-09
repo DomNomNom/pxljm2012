@@ -336,7 +336,7 @@
   </object>
   <object type="contitionalPath" gid="1419" x="1568" y="800">
    <properties>
-    <property name="bottons" value="40"/>
+    <property name="buttons" value="40"/>
    </properties>
   </object>
   <object type="contitionalPath" gid="1419" x="1504" y="800">
